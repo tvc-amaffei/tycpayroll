@@ -1,0 +1,57 @@
+---
+title: "TYC Payroll December 2023"
+format: 
+  pdf: default
+editor: visual
+params:
+  iname: "Olivia Riddiford"
+  idata: |-
+          [{"Instructor":"Olivia Riddiford","Type":"Inst","Email":"livridd@gmail.com","Base0":15,"Base1":40,"PP7":7,"Cap":120,"Curryear":5,"Anniversary":"May 1st"}]
+  cdata: |-
+          [{"Instructor":"Olivia Riddiford","studio_class":"IN STUDIO Yoga Flow","Date":"Dec 2, 2023","Time":"8:00am","s_at":10,"v_at":5,"Tot_atttendees":15,"Pay":103},{"Instructor":"Olivia Riddiford","studio_class":"IN STUDIO Yoga Sculpt","Date":"Dec 5, 2023","Time":"6:00am","s_at":2,"v_at":1,"Tot_atttendees":3,"Pay":40},{"Instructor":"Olivia Riddiford","studio_class":"IN STUDIO Yoga Sculpt","Date":"Dec 7, 2023","Time":"6:00am","s_at":1,"v_at":0,"Tot_atttendees":1,"Pay":40},{"Instructor":"Olivia Riddiford","studio_class":"IN STUDIO Yoga Flow","Date":"Dec 9, 2023","Time":"8:00am","s_at":7,"v_at":4,"Tot_atttendees":11,"Pay":75},{"Instructor":"Olivia Riddiford","studio_class":"IN STUDIO Yoga Sculpt","Date":"Dec 10, 2023","Time":"8:00am","s_at":8,"v_at":0,"Tot_atttendees":8,"Pay":54},{"Instructor":"Olivia Riddiford","studio_class":"IN STUDIO Yoga Sculpt","Date":"Dec 12, 2023","Time":"6:00am","s_at":4,"v_at":0,"Tot_atttendees":4,"Pay":40},{"Instructor":"Olivia Riddiford","studio_class":"IN STUDIO Yoga Sculpt","Date":"Dec 14, 2023","Time":"6:00am","s_at":4,"v_at":1,"Tot_atttendees":5,"Pay":40},{"Instructor":"Olivia Riddiford","studio_class":"IN STUDIO Flex & Flow","Date":"Dec 18, 2023","Time":"8:00am","s_at":3,"v_at":0,"Tot_atttendees":3,"Pay":40},{"Instructor":"Olivia Riddiford","studio_class":"IN STUDIO Yoga Sculpt","Date":"Dec 19, 2023","Time":"6:00am","s_at":3,"v_at":2,"Tot_atttendees":5,"Pay":40},{"Instructor":"Olivia Riddiford","studio_class":"IN STUDIO Yoga Sculpt","Date":"Dec 21, 2023","Time":"6:00am","s_at":7,"v_at":0,"Tot_atttendees":7,"Pay":47},{"Instructor":"Olivia Riddiford","studio_class":"IN STUDIO Yoga Sculpt","Date":"Dec 28, 2023","Time":"6:00am","s_at":3,"v_at":1,"Tot_atttendees":4,"Pay":40}] 
+---
+
+```{r setup}
+#| echo: false
+#| results: hide
+#| message: false
+knitr::opts_chunk$set(echo = FALSE)
+options(knitr.kable.NA = '')
+library(tidyverse)
+library(knitr)
+```
+
+```{r class-instructor-variables}
+idata <- jsonlite::fromJSON(params$idata)
+ctable <- jsonlite::fromJSON(params$cdata)
+ipay <- sum(ctable$Pay)
+```
+
+Dear `r idata$Instructor`,
+
+Please find below the details of classes you taught at TYC.
+Your pay this month is \$`r ipay`.
+
+The calculation of your salary is based on the following parameters:
+
+| Base 0 Clients    | Base 1+ Clients   | PP7 (\*)        | Cap             |
+|-------------------|-------------------|-----------------|-----------------|
+| \$`r idata$Base0` | \$`r idata$Base1` | \$`r idata$PP7` | \$`r idata$Cap` |
+
+(\*) PP7 = Per person starting with 7th Student
+
+The classes you taught are shown below
+
+```{r class-table}
+
+knitr::kable(ctable[2:8],
+             col.names = c("Class",
+                           "Date",
+                           "Time",
+                           "Studio",
+                           "Virtual",
+                           "Total",
+                           "Pay"))
+```
+
+Total Pay = \$`r ipay`

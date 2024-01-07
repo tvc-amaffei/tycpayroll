@@ -1,0 +1,124 @@
+Service Name.,Staff,Location Name,Day,Time,Attended,Booked,Late Cancels,No Shows,Pending,Capacity,Utilization
+IN STUDIO Chair Yoga,Susan M.,The Yoga Collaborative,"Dec 5, 2023",11:00am - 12:00pm,6,0,0,0,0,15,40
+IN STUDIO Chair Yoga,Susan M.,The Yoga Collaborative,"Dec 12, 2023",11:00am - 12:00pm,7,0,1,0,0,15,46.67
+IN STUDIO Chair Yoga,Susan M.,The Yoga Collaborative,"Dec 19, 2023",11:00am - 12:00pm,0,5,0,0,0,15,33.33
+IN STUDIO Deep Stretch and Relax,Melissa L.,The Yoga Collaborative,"Dec 6, 2023",11:00am - 12:15pm,16,0,0,0,0,18,88.89
+IN STUDIO Deep Stretch and Relax,Melissa L.,The Yoga Collaborative,"Dec 13, 2023",11:00am - 12:15pm,16,0,0,0,0,18,88.89
+IN STUDIO Deep Stretch and Relax,Melissa L.,The Yoga Collaborative,"Dec 20, 2023",11:00am - 12:15pm,0,7,0,0,0,18,38.89
+IN STUDIO Deep Stretch and Relax,Chelsea W.,The Yoga Collaborative,"Dec 27, 2023",11:00am - 12:15pm,0,2,0,0,0,18,11.11
+IN STUDIO Deep Stretch and Relax with Flow,Niisa M.,The Yoga Collaborative,"Dec 4, 2023",11:00am - 12:15pm,15,0,2,0,0,16,93.75
+IN STUDIO Deep Stretch and Relax with Flow,Niisa M.,The Yoga Collaborative,"Dec 11, 2023",11:00am - 12:15pm,16,0,0,0,0,16,100
+IN STUDIO Deep Stretch and Relax with Flow,Niisa M.,The Yoga Collaborative,"Dec 18, 2023",11:00am - 12:15pm,15,0,0,0,0,16,93.75
+IN STUDIO Deep Stretch Yin with Gentle Flow,Jane S.,The Yoga Collaborative,"Dec 1, 2023",11:00am - 12:15pm,14,0,0,0,0,18,77.78
+IN STUDIO Deep Stretch Yin with Gentle Flow,Abby P.,The Yoga Collaborative,"Dec 15, 2023",11:00am - 12:15pm,9,0,1,0,0,18,50
+IN STUDIO Deep Stretch Yin with Gentle Flow,Stephen B.,The Yoga Collaborative,"Dec 22, 2023",11:00am - 12:15pm,0,3,0,0,0,18,16.67
+IN STUDIO Deep Stretch Yin with Gentle Flow,Jane S.,The Yoga Collaborative,"Dec 29, 2023",11:00am - 12:15pm,0,2,0,0,0,18,11.11
+IN STUDIO Flex & Flow,Raydene Salinas H.,The Yoga Collaborative,"Dec 4, 2023",8:00am - 9:00am,9,0,0,0,0,25,36
+IN STUDIO Flex & Flow,Raydene Salinas H.,The Yoga Collaborative,"Dec 11, 2023",8:00am - 9:00am,11,0,0,0,0,25,44
+IN STUDIO Flex & Flow,Olivia R.,The Yoga Collaborative,"Dec 18, 2023",8:00am - 9:00am,3,0,0,0,0,25,12
+IN STUDIO Gentle Yoga for EVERY Body,Elaine C.,The Yoga Collaborative,"Dec 5, 2023",9:30am - 10:30am,20,0,0,0,0,20,100
+IN STUDIO Gentle Yoga for EVERY Body,Elaine C.,The Yoga Collaborative,"Dec 7, 2023",9:30am - 10:30am,18,0,0,0,0,20,90
+IN STUDIO Gentle Yoga for EVERY Body,Elaine C.,The Yoga Collaborative,"Dec 12, 2023",9:30am - 10:30am,21,0,1,0,0,20,105
+IN STUDIO Gentle Yoga for EVERY Body,Elaine C.,The Yoga Collaborative,"Dec 14, 2023",9:30am - 10:30am,20,0,0,0,0,20,100
+IN STUDIO Gentle Yoga for EVERY Body,Elaine C.,The Yoga Collaborative,"Dec 19, 2023",9:30am - 10:30am,19,0,0,0,0,20,95
+IN STUDIO Gentle Yoga for EVERY Body,Elaine C.,The Yoga Collaborative,"Dec 21, 2023",9:30am - 10:30am,0,8,0,0,0,20,40
+IN STUDIO Gentle Yoga for EVERY Body,Elaine C.,The Yoga Collaborative,"Dec 28, 2023",9:30am - 10:30am,0,2,0,0,0,20,10
+IN STUDIO Heated Flow,Raydene Salinas H.,The Yoga Collaborative,"Dec 1, 2023",9:30am - 10:30am,8,0,0,0,0,20,40
+IN STUDIO Heated Flow,Raydene Salinas H.,The Yoga Collaborative,"Dec 6, 2023",9:30am - 10:30am,13,0,0,0,0,20,65
+IN STUDIO Heated Flow,Raydene Salinas H.,The Yoga Collaborative,"Dec 13, 2023",9:30am - 10:30am,5,0,0,0,0,20,25
+IN STUDIO Heated Flow,Raydene Salinas H.,The Yoga Collaborative,"Dec 15, 2023",9:30am - 10:30am,9,0,0,0,0,20,45
+IN STUDIO Heated Flow,Raydene Salinas H.,The Yoga Collaborative,"Dec 20, 2023",9:30am - 10:30am,0,2,0,0,0,20,10
+IN STUDIO Heated Flow,Raydene Salinas H.,The Yoga Collaborative,"Dec 22, 2023",9:30am - 10:30am,0,4,0,0,0,20,20
+IN STUDIO Heated Flow,Raydene Salinas H.,The Yoga Collaborative,"Dec 27, 2023",9:30am - 10:30am,0,1,0,0,0,20,5
+IN STUDIO Heated Flow,Raydene Salinas H.,The Yoga Collaborative,"Dec 29, 2023",9:30am - 10:30am,0,1,0,0,0,20,5
+In Studio Heated Moderate Flow,Erica D.,The Yoga Collaborative,"Dec 2, 2023",9:15am - 10:15am,13,0,0,0,0,25,52
+In Studio Heated Moderate Flow,Erica D.,The Yoga Collaborative,"Dec 9, 2023",9:15am - 10:15am,16,0,0,0,0,25,64
+In Studio Heated Moderate Flow,Erica D.,The Yoga Collaborative,"Dec 16, 2023",9:15am - 10:15am,15,0,2,0,0,25,60
+In Studio Heated Moderate Flow,Erica D.,The Yoga Collaborative,"Dec 23, 2023",9:15am - 10:15am,0,5,0,0,0,25,20
+IN STUDIO Heated Moderate Vinyasa Flow / Ashtanga,Jenifer Z.,The Yoga Collaborative,"Dec 4, 2023",9:30am - 10:30am,2,0,0,0,0,20,10
+IN STUDIO Heated Moderate Vinyasa Flow / Ashtanga,Jenifer Z.,The Yoga Collaborative,"Dec 11, 2023",9:30am - 10:30am,2,0,0,0,0,20,10
+IN STUDIO Heated Moderate Vinyasa Flow / Ashtanga,Jenifer Z.,The Yoga Collaborative,"Dec 18, 2023",9:30am - 10:30am,5,0,0,0,0,20,25
+IN STUDIO Heated Vinyasa Flow,Amy L.,The Yoga Collaborative,"Dec 1, 2023",6:30am - 7:30am,8,0,0,0,0,25,32
+IN STUDIO Heated Vinyasa Flow,Amy L.,The Yoga Collaborative,"Dec 4, 2023",5:30pm - 6:30pm,20,0,1,0,0,25,80
+IN STUDIO Heated Vinyasa Flow,Amy L.,The Yoga Collaborative,"Dec 6, 2023",6:30am - 7:30am,6,0,0,0,0,25,24
+IN STUDIO Heated Vinyasa Flow,Amy L.,The Yoga Collaborative,"Dec 8, 2023",6:30am - 7:30am,8,0,0,0,0,25,32
+IN STUDIO Heated Vinyasa Flow,Amy L.,The Yoga Collaborative,"Dec 11, 2023",5:30pm - 6:30pm,17,0,0,0,0,25,68
+IN STUDIO Heated Vinyasa Flow,Amy L.,The Yoga Collaborative,"Dec 13, 2023",6:30am - 7:30am,11,0,0,0,0,25,44
+IN STUDIO Heated Vinyasa Flow,Amy L.,The Yoga Collaborative,"Dec 15, 2023",6:30am - 7:30am,8,0,0,0,0,25,32
+IN STUDIO Heated Vinyasa Flow,Amy L.,The Yoga Collaborative,"Dec 18, 2023",5:30pm - 6:30pm,19,0,0,0,0,25,76
+IN STUDIO Heated Vinyasa Flow,Amy L.,The Yoga Collaborative,"Dec 20, 2023",6:30am - 7:30am,0,7,0,0,0,25,28
+IN STUDIO Heated Vinyasa Flow,Amy L.,The Yoga Collaborative,"Dec 22, 2023",6:30am - 7:30am,0,4,0,0,0,25,16
+IN STUDIO Heated Vinyasa Flow,Amy L.,The Yoga Collaborative,"Dec 27, 2023",6:30am - 7:30am,0,3,0,0,0,25,12
+IN STUDIO Heated Vinyasa Flow,Amy L.,The Yoga Collaborative,"Dec 29, 2023",6:30am - 7:30am,0,1,0,0,0,25,4
+IN STUDIO Himalayan Kundalini Yoga,Andrew C.,The Yoga Collaborative,"Dec 6, 2023",8:00am - 9:00am,2,0,0,0,0,20,10
+IN STUDIO Kundalini Yoga and Meditation,Melissa L.,The Yoga Collaborative,"Dec 3, 2023",9:15am - 10:30am,12,0,0,0,0,20,60
+IN STUDIO Kundalini Yoga and Meditation,Melissa L.,The Yoga Collaborative,"Dec 10, 2023",9:15am - 10:30am,8,0,0,0,0,20,40
+IN STUDIO Kundalini Yoga and Meditation,Melissa L.,The Yoga Collaborative,"Dec 17, 2023",9:15am - 10:30am,12,0,0,0,0,20,60
+IN STUDIO Kundalini Yoga and Meditation,Melissa L.,The Yoga Collaborative,"Dec 31, 2023",9:15am - 10:30am,0,4,0,0,0,20,20
+IN STUDIO Moderate Vinyasa,Erica D.,The Yoga Collaborative,"Dec 7, 2023",8:00am - 9:00am,12,0,0,0,0,20,60
+IN STUDIO Moderate Vinyasa,Erica D.,The Yoga Collaborative,"Dec 14, 2023",8:00am - 9:00am,5,0,0,0,0,20,25
+IN STUDIO Moderate Vinyasa,Erica D.,The Yoga Collaborative,"Dec 21, 2023",8:00am - 9:00am,0,2,0,0,0,20,10
+IN STUDIO Qigong and Guided Meditation,Andrew C.,The Yoga Collaborative,"Dec 1, 2023",8:00am - 9:00am,5,0,0,0,0,20,25
+IN STUDIO Qigong and Guided Meditation,Andrew C.,The Yoga Collaborative,"Dec 15, 2023",8:00am - 9:00am,4,0,0,0,0,20,20
+IN STUDIO Relaxing and Meditative Yin,Ginny M.,The Yoga Collaborative,"Dec 6, 2023",5:30pm - 6:45pm,7,0,0,0,0,18,38.89
+IN STUDIO Relaxing and Meditative Yin,Jane S.,The Yoga Collaborative,"Dec 13, 2023",5:30pm - 6:45pm,16,0,0,0,0,18,88.89
+IN STUDIO Relaxing and Meditative Yin,Jane S.,The Yoga Collaborative,"Dec 20, 2023",5:30pm - 6:45pm,0,5,0,0,0,18,27.78
+IN STUDIO Relaxing and Meditative Yin,Jane S.,The Yoga Collaborative,"Dec 27, 2023",5:30pm - 6:45pm,0,3,0,0,0,18,16.67
+IN STUDIO Restorative Yoga,Ginny M.,The Yoga Collaborative,"Dec 5, 2023",4:00pm - 5:00pm,10,0,0,0,0,20,50
+IN STUDIO Restorative Yoga,Ginny M.,The Yoga Collaborative,"Dec 12, 2023",4:00pm - 5:00pm,9,0,0,0,0,20,45
+IN STUDIO Restorative Yoga,Jane S.,The Yoga Collaborative,"Dec 19, 2023",4:00pm - 5:00pm,0,5,0,0,0,20,25
+IN STUDIO Slow Vinyasa Flow,Elaine C.,The Yoga Collaborative,"Dec 5, 2023",8:00am - 9:00am,9,0,0,0,0,20,45
+IN STUDIO Slow Vinyasa Flow,Michele N.,The Yoga Collaborative,"Dec 5, 2023",5:30pm - 6:30pm,15,0,0,0,0,20,75
+IN STUDIO Slow Vinyasa Flow,Elaine C.,The Yoga Collaborative,"Dec 12, 2023",8:00am - 9:00am,10,0,0,0,0,20,50
+IN STUDIO Slow Vinyasa Flow,Michele N.,The Yoga Collaborative,"Dec 12, 2023",5:30pm - 6:30pm,22,0,0,0,0,20,110
+IN STUDIO Slow Vinyasa Flow,Elaine C.,The Yoga Collaborative,"Dec 19, 2023",8:00am - 9:00am,14,0,0,0,0,20,70
+IN STUDIO Slow Vinyasa Flow,Michele N.,The Yoga Collaborative,"Dec 19, 2023",5:30pm - 6:30pm,0,2,0,0,0,20,10
+IN STUDIO Yoga Flow,Olivia R.,The Yoga Collaborative,"Dec 2, 2023",8:00am - 9:00am,10,0,0,0,0,20,50
+IN STUDIO Yoga Flow,Olivia R.,The Yoga Collaborative,"Dec 9, 2023",8:00am - 9:00am,7,0,0,0,0,20,35
+IN STUDIO Yoga Flow,Kayla C.,The Yoga Collaborative,"Dec 16, 2023",8:00am - 9:00am,13,0,0,0,0,20,65
+IN STUDIO Yoga Flow,Kayla C.,The Yoga Collaborative,"Dec 23, 2023",8:00am - 9:00am,0,3,0,0,0,20,15
+IN STUDIO Yoga Sculpt,Marie B.,The Yoga Collaborative,"Dec 3, 2023",8:00am - 9:00am,8,0,0,0,0,20,40
+IN STUDIO Yoga Sculpt,Olivia R.,The Yoga Collaborative,"Dec 5, 2023",6:00am - 7:00am,2,0,0,0,0,20,10
+IN STUDIO Yoga Sculpt,Olivia R.,The Yoga Collaborative,"Dec 7, 2023",6:00am - 7:00am,1,0,0,0,0,20,5
+IN STUDIO Yoga Sculpt,Olivia R.,The Yoga Collaborative,"Dec 10, 2023",8:00am - 9:00am,8,0,0,0,0,20,40
+IN STUDIO Yoga Sculpt,Olivia R.,The Yoga Collaborative,"Dec 12, 2023",6:00am - 7:00am,4,0,0,0,0,20,20
+IN STUDIO Yoga Sculpt,Olivia R.,The Yoga Collaborative,"Dec 14, 2023",6:00am - 7:00am,4,0,0,0,0,20,20
+IN STUDIO Yoga Sculpt,Marie B.,The Yoga Collaborative,"Dec 17, 2023",8:00am - 9:00am,7,0,0,0,0,20,35
+IN STUDIO Yoga Sculpt,Olivia R.,The Yoga Collaborative,"Dec 19, 2023",6:00am - 7:00am,3,0,0,0,0,20,15
+IN STUDIO Yoga Sculpt,Olivia R.,The Yoga Collaborative,"Dec 21, 2023",6:00am - 7:00am,0,2,0,0,0,20,10
+Virtual via Zoom  Deep Stretch and Relax with Flow,Niisa M.,The Yoga Collaborative,"Dec 4, 2023",11:00am - 12:15pm,6,0,0,0,0,20,30
+Virtual via Zoom  Deep Stretch and Relax with Flow,Niisa M.,The Yoga Collaborative,"Dec 11, 2023",11:00am - 12:15pm,8,0,0,0,0,20,40
+Virtual via Zoom  Deep Stretch and Relax with Flow,Niisa M.,The Yoga Collaborative,"Dec 18, 2023",11:00am - 12:15pm,6,0,0,0,0,20,30
+Virtual via Zoom Deep Stretch and Relax,Melissa L.,The Yoga Collaborative,"Dec 6, 2023",11:00am - 12:15pm,5,0,0,0,0,20,25
+Virtual via Zoom Deep Stretch and Relax,Melissa L.,The Yoga Collaborative,"Dec 13, 2023",11:00am - 12:15pm,6,0,0,0,0,20,30
+Virtual via Zoom Deep Stretch and Relax,Melissa L.,The Yoga Collaborative,"Dec 20, 2023",11:00am - 12:15pm,0,1,0,0,0,20,5
+Virtual via Zoom Deep Stretch Yin with Gentle Flow,Jane S.,The Yoga Collaborative,"Dec 1, 2023",11:00am - 12:15pm,3,0,0,0,0,20,15
+Virtual via Zoom Deep Stretch Yin with Gentle Flow,Abby P.,The Yoga Collaborative,"Dec 15, 2023",11:00am - 12:15pm,4,0,0,0,0,20,20
+Virtual via Zoom Deep Stretch Yin with Gentle Flow,Stephen B.,The Yoga Collaborative,"Dec 22, 2023",11:00am - 12:15pm,0,1,0,0,0,20,5
+Virtual via Zoom Gentle Yoga for EVERY Body,Elaine C.,The Yoga Collaborative,"Dec 5, 2023",9:30am - 10:30am,8,0,0,0,0,20,40
+Virtual via Zoom Gentle Yoga for EVERY Body,Elaine C.,The Yoga Collaborative,"Dec 7, 2023",9:30am - 10:30am,5,0,0,0,0,20,25
+Virtual via Zoom Gentle Yoga for EVERY Body,Elaine C.,The Yoga Collaborative,"Dec 12, 2023",9:30am - 10:30am,4,0,0,0,0,20,20
+Virtual via Zoom Gentle Yoga for EVERY Body,Elaine C.,The Yoga Collaborative,"Dec 14, 2023",9:30am - 10:30am,6,0,0,0,0,20,30
+Virtual via Zoom Gentle Yoga for EVERY Body,Elaine C.,The Yoga Collaborative,"Dec 19, 2023",9:30am - 10:30am,0,5,0,0,0,20,0
+Virtual via Zoom Gentle Yoga for EVERY Body,Elaine C.,The Yoga Collaborative,"Dec 21, 2023",9:30am - 10:30am,0,1,0,0,0,20,5
+Virtual via Zoom Heated Flow,Raydene Salinas H.,The Yoga Collaborative,"Dec 1, 2023",9:30am - 10:30am,1,0,0,0,0,20,5
+Virtual via Zoom Heated Flow,Raydene Salinas H.,The Yoga Collaborative,"Dec 6, 2023",9:30am - 10:30am,1,0,0,0,0,20,5
+Virtual via Zoom Heated Flow,Raydene Salinas H.,The Yoga Collaborative,"Dec 13, 2023",9:30am - 10:30am,1,0,0,0,0,20,5
+Virtual via Zoom Heated Flow,Raydene Salinas H.,The Yoga Collaborative,"Dec 20, 2023",9:30am - 10:30am,0,1,0,0,0,20,5
+Virtual via Zoom Heated Flow,Raydene Salinas H.,The Yoga Collaborative,"Dec 27, 2023",9:30am - 10:30am,0,1,0,0,0,20,5
+Virtual via Zoom Heated Vinyasa Flow,Amy L.,The Yoga Collaborative,"Dec 13, 2023",6:30am - 7:30am,1,0,0,0,0,20,5
+Virtual via Zoom Kundalini Yoga and Meditation,Melissa L.,The Yoga Collaborative,"Dec 3, 2023",9:15am - 10:30am,3,0,0,0,0,20,15
+Virtual via Zoom Kundalini Yoga and Meditation,Melissa L.,The Yoga Collaborative,"Dec 10, 2023",9:15am - 10:30am,1,0,0,0,0,20,5
+Virtual via Zoom Kundalini Yoga and Meditation,Melissa L.,The Yoga Collaborative,"Dec 17, 2023",9:15am - 10:30am,2,0,0,0,0,20,10
+Virtual via Zoom Qigong and Guided Meditation,Andrew C.,The Yoga Collaborative,"Dec 1, 2023",8:00am - 9:00am,1,0,0,0,0,20,5
+Virtual via Zoom Qigong and Guided Meditation,Andrew C.,The Yoga Collaborative,"Dec 8, 2023",8:00am - 9:00am,2,0,0,0,0,20,10
+Virtual via Zoom Qigong and Guided Meditation,Andrew C.,The Yoga Collaborative,"Dec 15, 2023",8:00am - 9:00am,1,0,0,0,0,20,5
+Virtual via Zoom Slow Vinyasa Flow,Elaine C.,The Yoga Collaborative,"Dec 5, 2023",8:00am - 9:00am,4,0,0,0,0,20,20
+Virtual via Zoom Slow Vinyasa Flow,Elaine C.,The Yoga Collaborative,"Dec 12, 2023",8:00am - 9:00am,5,0,0,0,0,20,25
+Virtual via Zoom Slow Vinyasa Flow,Elaine C.,The Yoga Collaborative,"Dec 19, 2023",8:00am - 9:00am,4,0,0,0,0,20,20
+Virtual via Zoom Yoga Flow,Olivia R.,The Yoga Collaborative,"Dec 2, 2023",8:00am - 9:00am,5,0,0,0,0,20,25
+Virtual via Zoom Yoga Flow,Olivia R.,The Yoga Collaborative,"Dec 9, 2023",8:00am - 9:00am,4,0,0,0,0,20,20
+Virtual via Zoom Yoga Flow,Kayla C.,The Yoga Collaborative,"Dec 16, 2023",8:00am - 9:00am,1,0,0,0,0,20,5
+Virtual via Zoom Yoga Sculpt,Olivia R.,The Yoga Collaborative,"Dec 5, 2023",6:00am - 7:00am,1,0,0,0,0,20,5
+Virtual via Zoom Yoga Sculpt,Olivia R.,The Yoga Collaborative,"Dec 14, 2023",6:00am - 7:00am,1,0,0,0,0,20,5
+Virtual via Zoom Yoga Sculpt,Olivia R.,The Yoga Collaborative,"Dec 19, 2023",6:00am - 7:00am,2,0,0,0,0,20,10

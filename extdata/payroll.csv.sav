@@ -1,0 +1,184 @@
+s_staff.text_fullname,Client,Email,Phone,Member ID,Day,Time,Service Name.,Service Type,Commission Sales,Booked,Attended,No shows,Late Cancels,Base Rate,Bonus,Total,Tip Amount,Hourly Pay Rate
+Abby Polk,,,,,"Nov 24, 2023",11:00am,IN STUDIO Deep Stretch Yin with Gentle Flow,Classes,0,16,16,0,0,$40.00,$36.00,$76.00,$0.00,Sub Rate
+Abby Polk,,,,,"Nov 24, 2023",11:00am,Virtual via Zoom Deep Stretch Yin with Gentle Flow,Classes,0,1,1,0,0,$6.00,$0.00,$6.00,$0.00,Virtual Per Client Rate Year 1 & 2
+Amy Littlefield,,,,,"Nov 1, 2023",6:30am,IN STUDIO Heated Vinyasa Flow,Classes,0,5,5,0,0,$40.00,$0.00,$40.00,$0.00,Year 4
+Amy Littlefield,,,,,"Nov 1, 2023",6:30am,Virtual via Zoom Heated Vinyasa Flow,Classes,0,0,0,0,0,$0.00,$0.00,$0.00,$0.00,Virtual Per Client Rate Year 3 - 6
+Amy Littlefield,,,,,"Nov 3, 2023",6:30am,IN STUDIO Heated Vinyasa Flow,Classes,0,7,7,0,0,$40.00,$7.00,$47.00,$0.00,Year 4
+Amy Littlefield,,,,,"Nov 3, 2023",6:30am,Virtual via Zoom Heated Vinyasa Flow,Classes,0,0,0,0,0,$0.00,$0.00,$0.00,$0.00,Virtual Per Client Rate Year 3 - 6
+Amy Littlefield,,,,,"Nov 6, 2023",9:30am,IN STUDIO Heated Moderate Vinyasa Flow / Ashtanga,Classes,0,5,5,0,0,$40.00,$0.00,$40.00,$0.00,Year 4
+Amy Littlefield,,,,,"Nov 6, 2023",5:30pm,IN STUDIO Heated Vinyasa Flow,Classes,0,20,18,0,2,$40.00,$98.00,$120.00,$0.00,Year 4
+Amy Littlefield,,,,,"Nov 8, 2023",6:30am,IN STUDIO Heated Vinyasa Flow,Classes,0,8,8,0,0,$40.00,$14.00,$54.00,$0.00,Year 4
+Amy Littlefield,,,,,"Nov 8, 2023",6:30am,Virtual via Zoom Heated Vinyasa Flow,Classes,0,0,0,0,0,$0.00,$0.00,$0.00,$0.00,Virtual Per Client Rate Year 3 - 6
+Amy Littlefield,,,,,"Nov 10, 2023",6:30am,IN STUDIO Heated Vinyasa Flow,Classes,0,14,14,0,0,$40.00,$49.00,$89.00,$0.00,Year 4
+Amy Littlefield,,,,,"Nov 10, 2023",6:30am,Virtual via Zoom Heated Vinyasa Flow,Classes,0,0,0,0,0,$0.00,$0.00,$0.00,$0.00,Virtual Per Client Rate Year 3 - 6
+Amy Littlefield,,,,,"Nov 13, 2023",8:00am,IN STUDIO Flex & Flow,Classes,0,6,6,0,0,$40.00,$0.00,$40.00,$0.00,Year 4
+Amy Littlefield,,,,,"Nov 13, 2023",5:30pm,IN STUDIO Heated Vinyasa Flow,Classes,0,20,19,0,1,$40.00,$91.00,$120.00,$0.00,Year 4
+Amy Littlefield,,,,,"Nov 15, 2023",6:30am,IN STUDIO Heated Vinyasa Flow,Classes,0,12,12,0,0,$40.00,$42.00,$82.00,$0.00,Year 4
+Amy Littlefield,,,,,"Nov 15, 2023",6:30am,Virtual via Zoom Heated Vinyasa Flow,Classes,0,0,0,0,0,$0.00,$0.00,$0.00,$0.00,Virtual Per Client Rate Year 3 - 6
+Amy Littlefield,,,,,"Nov 17, 2023",6:30am,IN STUDIO Heated Vinyasa Flow,Classes,0,7,7,0,0,$40.00,$7.00,$47.00,$0.00,Year 4
+Amy Littlefield,,,,,"Nov 17, 2023",6:30am,Virtual via Zoom Heated Vinyasa Flow,Classes,0,0,0,0,0,$0.00,$0.00,$0.00,$0.00,Virtual Per Client Rate Year 3 - 6
+Amy Littlefield,,,,,"Nov 20, 2023",5:30pm,IN STUDIO Heated Vinyasa Flow,Classes,0,24,24,0,0,$40.00,$126.00,$120.00,$0.00,Year 4
+Amy Littlefield,,,,,"Nov 22, 2023",6:30am,IN STUDIO Heated Vinyasa Flow,Classes,0,6,6,0,0,$40.00,$0.00,$40.00,$0.00,Year 4
+Amy Littlefield,,,,,"Nov 22, 2023",6:30am,Virtual via Zoom Heated Vinyasa Flow,Classes,0,0,0,0,0,$0.00,$0.00,$0.00,$0.00,Virtual Per Client Rate Year 3 - 6
+Amy Littlefield,,,,,"Nov 24, 2023",6:30am,IN STUDIO Heated Vinyasa Flow,Classes,0,5,5,0,0,$40.00,$0.00,$40.00,$0.00,Year 4
+Amy Littlefield,,,,,"Nov 24, 2023",6:30am,Virtual via Zoom Heated Vinyasa Flow,Classes,0,0,0,0,0,$0.00,$0.00,$0.00,$0.00,Virtual Per Client Rate Year 3 - 6
+Amy Littlefield,,,,,"Nov 27, 2023",5:30pm,IN STUDIO Heated Vinyasa Flow,Classes,0,26,25,1,0,$40.00,$133.00,$120.00,$0.00,Year 4
+Amy Littlefield,,,,,"Nov 29, 2023",6:30am,IN STUDIO Heated Vinyasa Flow,Classes,0,8,8,0,0,$40.00,$14.00,$54.00,$0.00,Year 4
+Amy Littlefield,,,,,"Nov 29, 2023",6:30am,Virtual via Zoom Heated Vinyasa Flow,Classes,0,0,0,0,0,$0.00,$0.00,$0.00,$0.00,Virtual Per Client Rate Year 3 - 6
+Andrew Cox,,,,,"Nov 1, 2023",8:00am,IN STUDIO Himalayan Kundalini Yoga,Classes,0,5,4,0,1,$40.00,$0.00,$40.00,$0.00,Year 3
+Andrew Cox,,,,,"Nov 1, 2023",8:00am,Virtual via Zoom Himalayan Kundalini Yoga,Classes,0,0,0,0,0,$0.00,$0.00,$0.00,$0.00,Virtual Per Client Rate Year 3 - 6
+Andrew Cox,,,,,"Nov 3, 2023",8:00am,IN STUDIO Qigong and Guided Meditation,Classes,0,6,6,0,0,$40.00,$0.00,$40.00,$0.00,Year 3
+Andrew Cox,,,,,"Nov 3, 2023",8:00am,Virtual via Zoom Qigong and Guided Meditation,Classes,0,1,1,0,0,$7.00,$0.00,$7.00,$0.00,Virtual Per Client Rate Year 3 - 6
+Andrew Cox,,,,,"Nov 8, 2023",8:00am,IN STUDIO Himalayan Kundalini Yoga,Classes,0,3,3,0,0,$40.00,$0.00,$40.00,$0.00,Year 3
+Andrew Cox,,,,,"Nov 8, 2023",8:00am,Virtual via Zoom Himalayan Kundalini Yoga,Classes,0,0,0,0,0,$0.00,$0.00,$0.00,$0.00,Virtual Per Client Rate Year 3 - 6
+Andrew Cox,,,,,"Nov 10, 2023",8:00am,IN STUDIO Qigong and Guided Meditation,Classes,0,9,8,0,1,$40.00,$14.00,$54.00,$0.00,Year 3
+Andrew Cox,,,,,"Nov 10, 2023",8:00am,Virtual via Zoom Qigong and Guided Meditation,Classes,0,1,1,0,0,$7.00,$0.00,$7.00,$0.00,Virtual Per Client Rate Year 3 - 6
+Andrew Cox,,,,,"Nov 22, 2023",8:00am,IN STUDIO Himalayan Kundalini Yoga,Classes,0,5,4,0,1,$40.00,$0.00,$40.00,$0.00,Year 3
+Andrew Cox,,,,,"Nov 22, 2023",8:00am,Virtual via Zoom Himalayan Kundalini Yoga,Classes,0,1,1,0,0,$7.00,$0.00,$7.00,$0.00,Virtual Per Client Rate Year 3 - 6
+Andrew Cox,,,,,"Nov 24, 2023",8:00am,Virtual via Zoom Qigong and Guided Meditation,Classes,0,2,2,0,0,$7.00,$0.00,$7.00,$0.00,Virtual Per Client Rate Year 3 - 6
+Andrew Cox,,,,,"Nov 24, 2023",8:00am,IN STUDIO Qigong and Guided Meditation,Classes,0,3,3,0,0,$40.00,$0.00,$40.00,$0.00,Year 3
+Andrew Cox,,,,,"Nov 29, 2023",8:00am,IN STUDIO Himalayan Kundalini Yoga,Classes,0,1,1,0,0,$40.00,$0.00,$40.00,$0.00,Year 3
+Andrew Cox,,,,,"Nov 29, 2023",8:00am,Virtual via Zoom Himalayan Kundalini Yoga,Classes,0,0,0,0,0,$0.00,$0.00,$0.00,$0.00,Virtual Per Client Rate Year 3 - 6
+Andrew Cox,,,,,"Nov 29, 2023",9:30am,IN STUDIO Heated Flow,Classes,0,10,9,1,0,$40.00,$21.00,$61.00,$0.00,Year 3
+Andrew Cox,,,,,"Nov 29, 2023",9:30am,Virtual via Zoom Heated Flow,Classes,0,0,0,0,0,$0.00,$0.00,$0.00,$0.00,Virtual Per Client Rate Year 3 - 6
+Elaine Cody,,,,,"Nov 2, 2023",9:30am,IN STUDIO Gentle Yoga for EVERY Body,Classes,0,21,20,0,1,$45.00,$120.00,$150.00,$0.00,Year 7
+Elaine Cody,,,,,"Nov 2, 2023",9:30am,Virtual via Zoom Gentle Yoga for EVERY Body,Classes,0,6,6,0,0,$8.00,$40.00,$48.00,$0.00,Virtual Per Client Rate Year 7
+Elaine Cody,,,,,"Nov 7, 2023",8:00am,Virtual via Zoom Slow Vinyasa Flow,Classes,0,9,9,0,0,$8.00,$64.00,$72.00,$0.00,Virtual Per Client Rate Year 7
+Elaine Cody,,,,,"Nov 7, 2023",8:00am,IN STUDIO Slow Vinyasa Flow,Classes,0,11,11,0,0,$45.00,$40.00,$85.00,$0.00,Year 7
+Elaine Cody,,,,,"Nov 7, 2023",9:30am,IN STUDIO Gentle Yoga for EVERY Body,Classes,0,20,20,0,0,$45.00,$112.00,$150.00,$0.00,Year 7
+Elaine Cody,,,,,"Nov 7, 2023",9:30am,Virtual via Zoom Gentle Yoga for EVERY Body,Classes,0,9,9,0,0,$8.00,$64.00,$72.00,$0.00,Virtual Per Client Rate Year 7
+Elaine Cody,,,,,"Nov 9, 2023",9:30am,IN STUDIO Gentle Yoga for EVERY Body,Classes,0,20,20,0,0,$45.00,$112.00,$150.00,$0.00,Year 7
+Elaine Cody,,,,,"Nov 9, 2023",9:30am,Virtual via Zoom Gentle Yoga for EVERY Body,Classes,0,6,6,0,0,$8.00,$40.00,$48.00,$0.00,Virtual Per Client Rate Year 7
+Elaine Cody,,,,,"Nov 14, 2023",8:00am,Virtual via Zoom Slow Vinyasa Flow,Classes,0,9,9,0,0,$8.00,$64.00,$72.00,$0.00,Virtual Per Client Rate Year 7
+Elaine Cody,,,,,"Nov 14, 2023",8:00am,IN STUDIO Slow Vinyasa Flow,Classes,0,10,10,0,0,$45.00,$32.00,$77.00,$0.00,Year 7
+Elaine Cody,,,,,"Nov 14, 2023",9:30am,IN STUDIO Gentle Yoga for EVERY Body,Classes,0,18,18,0,0,$45.00,$96.00,$141.00,$0.00,Year 7
+Elaine Cody,,,,,"Nov 14, 2023",9:30am,Virtual via Zoom Gentle Yoga for EVERY Body,Classes,0,6,6,0,0,$8.00,$40.00,$48.00,$0.00,Virtual Per Client Rate Year 7
+Elaine Cody,,,,,"Nov 16, 2023",9:30am,IN STUDIO Gentle Yoga for EVERY Body,Classes,0,21,21,0,0,$45.00,$120.00,$150.00,$0.00,Year 7
+Elaine Cody,,,,,"Nov 16, 2023",9:30am,Virtual via Zoom Gentle Yoga for EVERY Body,Classes,0,7,7,0,0,$8.00,$40.00,$48.00,$0.00,Virtual Per Client Rate Year 7
+Elaine Cody,,,,,"Nov 21, 2023",8:00am,Virtual via Zoom Slow Vinyasa Flow,Classes,0,3,3,0,0,$8.00,$16.00,$24.00,$0.00,Virtual Per Client Rate Year 7
+Elaine Cody,,,,,"Nov 21, 2023",8:00am,IN STUDIO Slow Vinyasa Flow,Classes,0,14,14,0,0,$45.00,$64.00,$109.00,$0.00,Year 7
+Elaine Cody,,,,,"Nov 21, 2023",9:30am,IN STUDIO Gentle Yoga for EVERY Body,Classes,0,21,20,0,1,$45.00,$120.00,$150.00,$0.00,Year 7
+Elaine Cody,,,,,"Nov 21, 2023",9:30am,Virtual via Zoom Gentle Yoga for EVERY Body,Classes,0,9,9,0,0,$8.00,$64.00,$72.00,$0.00,Virtual Per Client Rate Year 7
+Elaine Cody,,,,,"Nov 28, 2023",8:00am,Virtual via Zoom Slow Vinyasa Flow,Classes,0,6,6,0,0,$8.00,$40.00,$48.00,$0.00,Virtual Per Client Rate Year 7
+Elaine Cody,,,,,"Nov 28, 2023",8:00am,IN STUDIO Slow Vinyasa Flow,Classes,0,8,7,0,1,$45.00,$16.00,$61.00,$0.00,Year 7
+Elaine Cody,,,,,"Nov 28, 2023",9:30am,IN STUDIO Gentle Yoga for EVERY Body,Classes,0,12,12,0,0,$45.00,$48.00,$93.00,$0.00,Year 7
+Elaine Cody,,,,,"Nov 28, 2023",9:30am,Virtual via Zoom Gentle Yoga for EVERY Body,Classes,0,6,6,0,0,$8.00,$40.00,$48.00,$0.00,Virtual Per Client Rate Year 7
+Elaine Cody,,,,,"Nov 30, 2023",9:30am,IN STUDIO Gentle Yoga for EVERY Body,Classes,0,20,20,0,0,$45.00,$112.00,$150.00,$0.00,Year 7
+Elaine Cody,,,,,"Nov 30, 2023",9:30am,Virtual via Zoom Gentle Yoga for EVERY Body,Classes,0,7,7,0,0,$8.00,$48.00,$56.00,$0.00,Virtual Per Client Rate Year 7
+Erica Decatur,,,,,"Nov 2, 2023",8:00am,Virtual via Zoom Moderate Vinyasa,Classes,0,0,0,0,0,$0.00,$0.00,$0.00,$0.00,Virtual Per Client Rate Year 1 & 2
+Erica Decatur,,,,,"Nov 2, 2023",8:00am,IN STUDIO Moderate Vinyasa,Classes,0,8,8,0,0,$40.00,$12.00,$52.00,$0.00,Year 1
+Erica Decatur,,,,,"Nov 4, 2023",9:15am,In Studio Heated Moderate Flow,Classes,0,9,9,0,0,$40.00,$18.00,$58.00,$0.00,Year 1
+Erica Decatur,,,,,"Nov 9, 2023",8:00am,Virtual via Zoom Moderate Vinyasa,Classes,0,0,0,0,0,$0.00,$0.00,$0.00,$0.00,Virtual Per Client Rate Year 1 & 2
+Erica Decatur,,,,,"Nov 9, 2023",8:00am,IN STUDIO Moderate Vinyasa,Classes,0,9,9,0,0,$40.00,$18.00,$58.00,$0.00,Year 1
+Erica Decatur,,,,,"Nov 11, 2023",9:15am,In Studio Heated Moderate Flow,Classes,0,13,13,0,0,$40.00,$36.00,$76.00,$0.00,Year 1
+Erica Decatur,,,,,"Nov 16, 2023",8:00am,Virtual via Zoom Moderate Vinyasa,Classes,0,1,1,0,0,$6.00,$0.00,$6.00,$0.00,Virtual Per Client Rate Year 1 & 2
+Erica Decatur,,,,,"Nov 16, 2023",8:00am,IN STUDIO Moderate Vinyasa,Classes,0,9,8,0,1,$40.00,$18.00,$58.00,$0.00,Year 1
+Erica Decatur,,,,,"Nov 18, 2023",9:15am,In Studio Heated Moderate Flow,Classes,0,12,12,0,0,$40.00,$30.00,$70.00,$0.00,Year 1
+Erica Decatur,,,,,"Nov 25, 2023",9:15am,In Studio Heated Moderate Flow,Classes,0,19,19,0,0,$40.00,$72.00,$85.00,$0.00,Year 1
+Erica Decatur,,,,,"Nov 30, 2023",8:00am,Virtual via Zoom Moderate Vinyasa,Classes,0,0,0,0,0,$0.00,$0.00,$0.00,$0.00,Virtual Per Client Rate Year 1 & 2
+Erica Decatur,,,,,"Nov 30, 2023",8:00am,IN STUDIO Moderate Vinyasa,Classes,0,9,9,0,0,$40.00,$18.00,$58.00,$0.00,Year 1
+Ginny Murphy,,,,,"Nov 7, 2023",4:00pm,IN STUDIO Restorative Yoga,Classes,0,7,7,0,0,$40.00,$7.00,$47.00,$0.00,Year 4
+Ginny Murphy,,,,,"Nov 14, 2023",4:00pm,IN STUDIO Restorative Yoga,Classes,0,5,3,1,1,$40.00,$0.00,$40.00,$0.00,Year 4
+Ginny Murphy,,,,,"Nov 21, 2023",4:00pm,IN STUDIO Restorative Yoga,Classes,0,5,5,0,0,$40.00,$0.00,$40.00,$0.00,Year 4
+Ginny Murphy,,,,,"Nov 28, 2023",4:00pm,IN STUDIO Restorative Yoga,Classes,0,13,13,0,0,$40.00,$42.00,$82.00,$0.00,Year 4
+Jane Silva Depp,,,,,"Nov 1, 2023",4:00pm,IN STUDIO Foundations of Yoga,Classes,0,0,0,0,0,$15.00,$0.00,$15.00,$0.00,Year 3
+Jane Silva Depp,,,,,"Nov 1, 2023",5:30pm,IN STUDIO Relaxing and Meditative Yin,Classes,0,10,10,0,0,$40.00,$21.00,$61.00,$0.00,Year 3
+Jane Silva Depp,,,,,"Nov 1, 2023",5:30pm,Virtual via Zoom Relaxing and Meditative Yin,Classes,0,0,0,0,0,$0.00,$0.00,$0.00,$0.00,Virtual Per Client Rate Year 3 - 6
+Jane Silva Depp,,,,,"Nov 3, 2023",11:00am,IN STUDIO Deep Stretch Yin with Gentle Flow,Classes,0,17,16,0,1,$40.00,$77.00,$110.00,$0.00,Year 3
+Jane Silva Depp,,,,,"Nov 3, 2023",11:00am,Virtual via Zoom Deep Stretch Yin with Gentle Flow,Classes,0,2,2,0,0,$7.00,$7.00,$14.00,$0.00,Virtual Per Client Rate Year 3 - 6
+Jane Silva Depp,,,,,"Nov 8, 2023",4:00pm,IN STUDIO Foundations of Yoga,Classes,0,2,2,0,0,$40.00,$0.00,$40.00,$0.00,Year 3
+Jane Silva Depp,,,,,"Nov 8, 2023",5:30pm,IN STUDIO Relaxing and Meditative Yin,Classes,0,14,14,0,0,$40.00,$49.00,$89.00,$0.00,Year 3
+Jane Silva Depp,,,,,"Nov 8, 2023",5:30pm,Virtual via Zoom Relaxing and Meditative Yin,Classes,0,2,2,0,0,$7.00,$7.00,$14.00,$0.00,Virtual Per Client Rate Year 3 - 6
+Jane Silva Depp,,,,,"Nov 10, 2023",11:00am,IN STUDIO Deep Stretch Yin with Gentle Flow,Classes,0,21,21,0,0,$40.00,$105.00,$110.00,$0.00,Year 3
+Jane Silva Depp,,,,,"Nov 10, 2023",11:00am,Virtual via Zoom Deep Stretch Yin with Gentle Flow,Classes,0,5,4,0,1,$7.00,$28.00,$35.00,$0.00,Virtual Per Client Rate Year 3 - 6
+Jane Silva Depp,,,,,"Nov 15, 2023",11:00am,IN STUDIO Deep Stretch and Relax,Classes,0,6,6,0,0,$40.00,$0.00,$40.00,$0.00,Year 3
+Jane Silva Depp,,,,,"Nov 15, 2023",11:00am,Virtual via Zoom Deep Stretch and Relax,Classes,0,2,2,0,0,$7.00,$7.00,$14.00,$0.00,Virtual Per Client Rate Year 3 - 6
+Jane Silva Depp,,,,,"Nov 15, 2023",4:00pm,IN STUDIO Foundations of Yoga,Classes,0,1,1,0,0,$40.00,$0.00,$40.00,$0.00,Year 3
+Jane Silva Depp,,,,,"Nov 15, 2023",5:30pm,IN STUDIO Relaxing and Meditative Yin,Classes,0,15,15,0,0,$40.00,$56.00,$96.00,$0.00,Year 3
+Jane Silva Depp,,,,,"Nov 15, 2023",5:30pm,Virtual via Zoom Relaxing and Meditative Yin,Classes,0,1,1,0,0,$0.00,$0.00,$0.00,$0.00,Virtual Per Client Rate Year 3 - 6
+Jane Silva Depp,,,,,"Nov 17, 2023",11:00am,IN STUDIO Deep Stretch Yin with Gentle Flow,Classes,0,13,13,0,0,$40.00,$42.00,$82.00,$0.00,Year 3
+Jane Silva Depp,,,,,"Nov 17, 2023",11:00am,Virtual via Zoom Deep Stretch Yin with Gentle Flow,Classes,0,3,3,0,0,$7.00,$14.00,$21.00,$0.00,Virtual Per Client Rate Year 3 - 6
+Jane Silva Depp,,,,,"Nov 22, 2023",4:00pm,IN STUDIO Foundations of Yoga,Classes,0,2,2,0,0,$40.00,$0.00,$40.00,$0.00,Year 3
+Jane Silva Depp,,,,,"Nov 22, 2023",5:30pm,IN STUDIO Relaxing and Meditative Yin,Classes,0,16,16,0,0,$40.00,$63.00,$103.00,$0.00,Year 3
+Jane Silva Depp,,,,,"Nov 22, 2023",5:30pm,Virtual via Zoom Relaxing and Meditative Yin,Classes,0,0,0,0,0,$0.00,$0.00,$0.00,$0.00,Virtual Per Client Rate Year 3 - 6
+Jane Silva Depp,,,,,"Nov 29, 2023",4:00pm,IN STUDIO Foundations of Yoga,Classes,0,3,3,0,0,$40.00,$0.00,$40.00,$0.00,Year 3
+Jane Silva Depp,,,,,"Nov 29, 2023",5:30pm,IN STUDIO Relaxing and Meditative Yin,Classes,0,14,14,0,0,$40.00,$56.00,$96.00,$0.00,Year 3
+Jane Silva Depp,,,,,"Nov 29, 2023",5:30pm,Virtual via Zoom Relaxing and Meditative Yin,Classes,0,1,1,0,0,$7.00,$0.00,$7.00,$0.00,Virtual Per Client Rate Year 3 - 6
+Jenifer Zetlan,,,,,"Nov 13, 2023",9:30am,IN STUDIO Heated Moderate Vinyasa Flow / Ashtanga,Classes,0,5,5,0,0,$40.00,$0.00,$40.00,$0.00,Year 3
+Jenifer Zetlan,,,,,"Nov 20, 2023",9:30am,IN STUDIO Heated Moderate Vinyasa Flow / Ashtanga,Classes,0,6,6,0,0,$40.00,$0.00,$40.00,$0.00,Year 3
+Kayla Costigan,,,,,"Nov 11, 2023",8:00am,IN STUDIO Yoga Flow,Classes,0,12,12,0,0,$40.00,$36.00,$76.00,$0.00,Year 1
+Kayla Costigan,,,,,"Nov 11, 2023",8:00am,Virtual via Zoom Yoga Flow,Classes,0,1,1,0,0,$6.00,$0.00,$6.00,$0.00,Virtual Per Client Rate Year 1 & 2
+Kayla Costigan,,,,,"Nov 18, 2023",8:00am,IN STUDIO Yoga Flow,Classes,0,16,14,0,2,$40.00,$54.00,$85.00,$0.00,Year 1
+Kayla Costigan,,,,,"Nov 18, 2023",8:00am,Virtual via Zoom Yoga Flow,Classes,0,2,2,0,0,$6.00,$6.00,$12.00,$0.00,Virtual Per Client Rate Year 1 & 2
+Kayla Costigan,,,,,"Nov 25, 2023",8:00am,IN STUDIO Yoga Flow,Classes,0,13,12,0,1,$40.00,$36.00,$76.00,$0.00,Year 1
+Kayla Costigan,,,,,"Nov 25, 2023",8:00am,Virtual via Zoom Yoga Flow,Classes,0,3,3,0,0,$6.00,$6.00,$12.00,$0.00,Virtual Per Client Rate Year 1 & 2
+Margie Mitchell,,,,,"Nov 17, 2023",8:00am,IN STUDIO Qigong and Guided Meditation,Classes,0,4,4,0,0,$40.00,$0.00,$40.00,$0.00,Sub Rate
+Margie Mitchell,,,,,"Nov 17, 2023",8:00am,Virtual via Zoom Qigong and Guided Meditation,Classes,0,2,2,0,0,$6.00,$6.00,$12.00,$0.00,Virtual Per Client Rate Year 1 & 2
+Marie Bushey,,,,,"Nov 12, 2023",8:00am,IN STUDIO Yoga Sculpt,Classes,0,9,9,0,0,$40.00,$18.00,$58.00,$0.00,Year 1
+Marie Bushey,,,,,"Nov 19, 2023",8:00am,IN STUDIO Yoga Sculpt,Classes,0,9,9,0,0,$40.00,$18.00,$58.00,$0.00,Year 1
+Marie Bushey,,,,,"Nov 21, 2023",6:00am,Virtual via Zoom Yoga Sculpt,Classes,0,1,1,0,0,$6.00,$0.00,$6.00,$0.00,Virtual Per Client Rate Year 1 & 2
+Marie Bushey,,,,,"Nov 21, 2023",6:00am,IN STUDIO Yoga Sculpt,Classes,0,2,2,0,0,$40.00,$0.00,$40.00,$0.00,Year 1
+Marie Bushey,,,,,"Nov 27, 2023",9:30am,IN STUDIO Heated Moderate Vinyasa Flow / Ashtanga,Classes,0,3,2,0,1,$40.00,$0.00,$40.00,$0.00,Year 1
+Michele Netto,,,,,"Nov 7, 2023",5:30pm,IN STUDIO Slow Vinyasa Flow,Classes,0,17,17,0,0,$45.00,$80.00,$125.00,$0.00,Year 7
+Michele Netto,,,,,"Nov 14, 2023",5:30pm,IN STUDIO Slow Vinyasa Flow,Classes,0,21,21,0,0,$45.00,$112.00,$150.00,$0.00,Year 7
+Michele Netto,,,,,"Nov 21, 2023",5:30pm,IN STUDIO Slow Vinyasa Flow,Classes,0,17,17,0,0,$45.00,$80.00,$125.00,$0.00,Year 7
+Michele Netto,,,,,"Nov 28, 2023",5:30pm,IN STUDIO Slow Vinyasa Flow,Classes,0,22,22,0,0,$45.00,$120.00,$150.00,$0.00,Year 7
+Niisa Morton,,,,,"Nov 6, 2023",11:00am,IN STUDIO Deep Stretch and Relax with Flow,Classes,0,17,16,0,1,$45.00,$84.00,$129.00,$0.00,Year 5
+Niisa Morton,,,,,"Nov 6, 2023",11:00am,Virtual via Zoom  Deep Stretch and Relax with Flow,Classes,0,5,5,0,0,$7.00,$28.00,$35.00,$0.00,Virtual Per Client Rate Year 3 - 6
+Niisa Morton,,,,,"Nov 13, 2023",11:00am,IN STUDIO Deep Stretch and Relax with Flow,Classes,0,18,18,0,0,$45.00,$91.00,$130.00,$0.00,Year 5
+Niisa Morton,,,,,"Nov 13, 2023",11:00am,Virtual via Zoom  Deep Stretch and Relax with Flow,Classes,0,7,7,0,0,$7.00,$42.00,$49.00,$0.00,Virtual Per Client Rate Year 3 - 6
+Niisa Morton,,,,,"Nov 20, 2023",11:00am,IN STUDIO Deep Stretch and Relax with Flow,Classes,0,15,15,0,0,$45.00,$70.00,$115.00,$0.00,Year 5
+Niisa Morton,,,,,"Nov 20, 2023",11:00am,Virtual via Zoom  Deep Stretch and Relax with Flow,Classes,0,5,5,0,0,$7.00,$28.00,$35.00,$0.00,Virtual Per Client Rate Year 3 - 6
+Niisa Morton,,,,,"Nov 27, 2023",11:00am,IN STUDIO Deep Stretch and Relax with Flow,Classes,0,16,16,0,0,$45.00,$77.00,$122.00,$0.00,Year 5
+Niisa Morton,,,,,"Nov 27, 2023",11:00am,Virtual via Zoom  Deep Stretch and Relax with Flow,Classes,0,3,3,0,0,$7.00,$7.00,$14.00,$0.00,Virtual Per Client Rate Year 3 - 6
+Olivia Riddiford,,,,,"Nov 2, 2023",6:00am,IN STUDIO Yoga Sculpt,Classes,0,5,5,0,0,$45.00,$0.00,$45.00,$0.00,Year 5
+Olivia Riddiford,,,,,"Nov 2, 2023",6:00am,Virtual via Zoom Yoga Sculpt,Classes,0,3,3,0,0,$7.00,$14.00,$21.00,$0.00,Virtual Per Client Rate Year 3 - 6
+Olivia Riddiford,,,,,"Nov 4, 2023",8:00am,IN STUDIO Yoga Flow,Classes,0,9,9,0,0,$45.00,$28.00,$73.00,$0.00,Year 5
+Olivia Riddiford,,,,,"Nov 4, 2023",8:00am,Virtual via Zoom Yoga Flow,Classes,0,3,3,0,0,$45.00,$0.00,$45.00,$0.00,Year 5
+Olivia Riddiford,,,,,"Nov 5, 2023",8:00am,IN STUDIO Yoga Sculpt,Classes,0,8,8,0,0,$45.00,$21.00,$66.00,$0.00,Year 5
+Olivia Riddiford,,,,,"Nov 7, 2023",6:00am,IN STUDIO Yoga Sculpt,Classes,0,6,6,0,0,$45.00,$7.00,$52.00,$0.00,Year 5
+Olivia Riddiford,,,,,"Nov 7, 2023",6:00am,Virtual via Zoom Yoga Sculpt,Classes,0,0,0,0,0,$0.00,$0.00,$0.00,$0.00,Virtual Per Client Rate Year 3 - 6
+Olivia Riddiford,,,,,"Nov 9, 2023",6:00am,IN STUDIO Yoga Sculpt,Classes,0,4,4,0,0,$45.00,$0.00,$45.00,$0.00,Year 5
+Olivia Riddiford,,,,,"Nov 9, 2023",6:00am,Virtual via Zoom Yoga Sculpt,Classes,0,1,1,0,0,$7.00,$0.00,$7.00,$0.00,Virtual Per Client Rate Year 3 - 6
+Olivia Riddiford,,,,,"Nov 14, 2023",6:00am,IN STUDIO Yoga Sculpt,Classes,0,4,4,0,0,$45.00,$0.00,$45.00,$0.00,Year 5
+Olivia Riddiford,,,,,"Nov 14, 2023",6:00am,Virtual via Zoom Yoga Sculpt,Classes,0,0,0,0,0,$0.00,$0.00,$0.00,$0.00,Virtual Per Client Rate Year 3 - 6
+Olivia Riddiford,,,,,"Nov 16, 2023",6:00am,IN STUDIO Yoga Sculpt,Classes,0,5,4,0,1,$45.00,$0.00,$45.00,$0.00,Year 5
+Olivia Riddiford,,,,,"Nov 16, 2023",6:00am,Virtual via Zoom Yoga Sculpt,Classes,0,1,1,0,0,$7.00,$0.00,$7.00,$0.00,Virtual Per Client Rate Year 3 - 6
+Olivia Riddiford,,,,,"Nov 26, 2023",8:00am,IN STUDIO Yoga Sculpt,Classes,0,7,7,0,0,$45.00,$14.00,$59.00,$0.00,Year 5
+Olivia Riddiford,,,,,"Nov 28, 2023",6:00am,IN STUDIO Yoga Sculpt,Classes,0,3,3,0,0,$45.00,$0.00,$45.00,$0.00,Year 5
+Olivia Riddiford,,,,,"Nov 28, 2023",6:00am,Virtual via Zoom Yoga Sculpt,Classes,0,0,0,0,0,$0.00,$0.00,$0.00,$0.00,Virtual Per Client Rate Year 3 - 6
+Olivia Riddiford,,,,,"Nov 30, 2023",6:00am,IN STUDIO Yoga Sculpt,Classes,0,2,2,0,0,$45.00,$0.00,$45.00,$0.00,Year 5
+Olivia Riddiford,,,,,"Nov 30, 2023",6:00am,Virtual via Zoom Yoga Sculpt,Classes,0,1,1,0,0,$7.00,$0.00,$7.00,$0.00,Virtual Per Client Rate Year 3 - 6
+Raydene Salinas Hansen,,,,,,,Time Load: 1:30h,,0,0,0,0,0,$24.00,$0.00,$24.00,$0.00,Front Desk
+Raydene Salinas Hansen,,,,,"Nov 1, 2023",9:30am,IN STUDIO Heated Flow,Classes,0,9,9,0,0,$40.00,$14.00,$54.00,$0.00,Year 3
+Raydene Salinas Hansen,,,,,"Nov 1, 2023",9:30am,Virtual via Zoom Heated Flow,Classes,0,0,0,0,0,$0.00,$0.00,$0.00,$0.00,Virtual Per Client Rate Year 3 - 6
+Raydene Salinas Hansen,,,,,"Nov 3, 2023",9:30am,IN STUDIO Heated Flow,Classes,0,9,9,0,0,$40.00,$21.00,$61.00,$0.00,Year 3
+Raydene Salinas Hansen,,,,,"Nov 3, 2023",9:30am,Virtual via Zoom Heated Flow,Classes,0,0,0,0,0,$0.00,$0.00,$0.00,$0.00,Virtual Per Client Rate Year 3 - 6
+Raydene Salinas Hansen,,,,,"Nov 6, 2023",8:00am,IN STUDIO Flex & Flow,Classes,0,10,10,0,0,$40.00,$21.00,$61.00,$0.00,Year 3
+Raydene Salinas Hansen,,,,,"Nov 8, 2023",9:30am,IN STUDIO Heated Flow,Classes,0,10,8,2,0,$40.00,$7.00,$47.00,$0.00,Year 3
+Raydene Salinas Hansen,,,,,"Nov 8, 2023",9:30am,Virtual via Zoom Heated Flow,Classes,0,0,0,0,0,$0.00,$0.00,$0.00,$0.00,Virtual Per Client Rate Year 3 - 6
+Raydene Salinas Hansen,,,,,"Nov 10, 2023",9:30am,IN STUDIO Heated Flow,Classes,0,22,22,0,0,$40.00,$112.00,$110.00,$0.00,Year 3
+Raydene Salinas Hansen,,,,,"Nov 10, 2023",9:30am,Virtual via Zoom Heated Flow,Classes,0,3,3,0,0,$7.00,$14.00,$21.00,$0.00,Virtual Per Client Rate Year 3 - 6
+Raydene Salinas Hansen,,,,,"Nov 15, 2023",9:30am,IN STUDIO Heated Flow,Classes,0,9,8,0,1,$40.00,$21.00,$61.00,$0.00,Year 3
+Raydene Salinas Hansen,,,,,"Nov 15, 2023",9:30am,Virtual via Zoom Heated Flow,Classes,0,1,1,0,0,$7.00,$0.00,$7.00,$0.00,Virtual Per Client Rate Year 3 - 6
+Raydene Salinas Hansen,,,,,"Nov 17, 2023",9:30am,IN STUDIO Heated Flow,Classes,0,19,19,0,0,$40.00,$91.00,$110.00,$0.00,Year 3
+Raydene Salinas Hansen,,,,,"Nov 17, 2023",9:30am,Virtual via Zoom Heated Flow,Classes,0,0,0,0,0,$0.00,$0.00,$0.00,$0.00,Virtual Per Client Rate Year 3 - 6
+Raydene Salinas Hansen,,,,,"Nov 20, 2023",8:00am,IN STUDIO Flex & Flow,Classes,0,8,8,0,0,$40.00,$7.00,$47.00,$0.00,Year 3
+Raydene Salinas Hansen,,,,,"Nov 20, 2023",8:00am,Virtual via Zoom Flex & Flow,Classes,0,1,1,0,0,$7.00,$0.00,$7.00,$0.00,Virtual Per Client Rate Year 3 - 6
+Raydene Salinas Hansen,,,,,"Nov 22, 2023",9:30am,IN STUDIO Heated Flow,Classes,0,8,8,0,0,$40.00,$14.00,$54.00,$0.00,Year 3
+Raydene Salinas Hansen,,,,,"Nov 22, 2023",9:30am,Virtual via Zoom Heated Flow,Classes,0,1,1,0,0,$7.00,$0.00,$7.00,$0.00,Virtual Per Client Rate Year 3 - 6
+Raydene Salinas Hansen,,,,,"Nov 24, 2023",9:30am,IN STUDIO Heated Flow,Classes,0,15,15,0,0,$40.00,$63.00,$103.00,$0.00,Year 3
+Raydene Salinas Hansen,,,,,"Nov 24, 2023",9:30am,Virtual via Zoom Heated Flow,Classes,0,0,0,0,0,$0.00,$0.00,$0.00,$0.00,Virtual Per Client Rate Year 3 - 6
+Raydene Salinas Hansen,,,,,"Nov 27, 2023",8:00am,IN STUDIO Flex & Flow,Classes,0,11,11,0,0,$40.00,$28.00,$68.00,$0.00,Year 3
+Raydene Salinas Hansen,,,,,"Nov 27, 2023",8:00am,Virtual via Zoom Flex & Flow,Classes,0,0,0,0,0,$0.00,$0.00,$0.00,$0.00,Virtual Per Client Rate Year 3 - 6
+Shawn Austin,,,,,"Nov 15, 2023",8:00am,IN STUDIO Himalayan Kundalini Yoga,Classes,0,5,5,0,0,$40.00,$0.00,$40.00,$0.00,Sub Rate
+Shawn Austin,,,,,"Nov 15, 2023",8:00am,Virtual via Zoom Himalayan Kundalini Yoga,Classes,0,0,0,0,0,$0.00,$0.00,$0.00,$0.00,Virtual Per Client Rate Year 1 & 2
+Susan Maddigan,,,,,"Nov 7, 2023",11:00am,IN STUDIO Chair Yoga,Classes,0,4,4,0,0,$45.00,$0.00,$45.00,$0.00,Year 5
+Susan Maddigan,,,,,"Nov 7, 2023",11:00am,Virtual via Zoom Chair Yoga,Classes,0,1,1,0,0,$7.00,$0.00,$7.00,$0.00,Virtual Per Client Rate Year 3 - 6
+Susan Maddigan,,,,,"Nov 14, 2023",11:00am,IN STUDIO Chair Yoga,Classes,0,4,4,0,0,$45.00,$0.00,$45.00,$0.00,Year 5
+Susan Maddigan,,,,,"Nov 14, 2023",11:00am,Virtual via Zoom Chair Yoga,Classes,0,0,0,0,0,$0.00,$0.00,$0.00,$0.00,Virtual Per Client Rate Year 3 - 6
+Susan Maddigan,,,,,"Nov 21, 2023",11:00am,IN STUDIO Chair Yoga,Classes,0,2,2,0,0,$45.00,$0.00,$45.00,$0.00,Year 5
+Susan Maddigan,,,,,"Nov 21, 2023",11:00am,Virtual via Zoom Chair Yoga,Classes,0,0,0,0,0,$0.00,$0.00,$0.00,$0.00,Virtual Per Client Rate Year 3 - 6
+Susan Maddigan,,,,,"Nov 28, 2023",11:00am,IN STUDIO Chair Yoga,Classes,0,4,4,0,0,$45.00,$0.00,$45.00,$0.00,Year 5
+Susan Maddigan,,,,,"Nov 28, 2023",11:00am,Virtual via Zoom Chair Yoga,Classes,0,0,0,0,0,$0.00,$0.00,$0.00,$0.00,Virtual Per Client Rate Year 3 - 6
+Tal Rabinowitz,,,,,"Nov 19, 2023",9:15am,IN STUDIO Kundalini Yoga and Meditation,Classes,0,20,20,0,0,$45.00,$77.00,$120.00,$0.00,Year 5

@@ -1,0 +1,174 @@
+---
+title: "TYC Payroll PDF Creation"
+output: html_notebook
+---
+
+# Initialization
+
+```{r}
+library(tidyverse)
+library(shiny)
+library(quarto)
+```
+
+# Import Instructor CSV
+
+```{r instructor-info, include=FALSE}
+instructor_info <- read_csv("extdata/instructors.csv")
+```
+
+# Import Detailed Class CSV for Payperiod
+
+```{r wl_payroll_rpt}
+wl_payroll_rpt  <- read_csv("extdata/payroll.csv",
+                    col_types = cols(s_staff.text_fullname = col_character(),
+                                     Client = col_skip(),
+                                     Email = col_skip(), 
+                                     Phone = col_skip(),
+                                     `Member ID` = col_skip(), 
+                                     Day = col_character(),
+                                     Time = col_character(),
+#                                     Day = col_date(format = "%b %d, %Y"),
+#                                     Time = col_time(format = "%I:%M%p"),
+                                     `Service Name.` = col_character(),
+                                     `Service Type` = col_skip(),
+                                     `Commission Sales` = col_skip(),
+                                     Booked = col_integer(),
+                                     Attended = col_integer(),
+                                     `No shows` = col_skip(),
+                                     `Late Cancels` = col_integer(),
+                                     `Base Rate` = col_skip(),
+                                     Bonus = col_skip(),
+                                     Total = col_skip(),
+                                     `Tip Amount` = col_skip(),
+                                     `Hourly Pay Rate` = col_skip(),
+                                     )
+                    )
+```
+
+# Cleanup
+
+```{r classes-held}
+  # rename the columns to nicer names
+  classes_held <- wl_payroll_rpt %>%
+  rename(Instructor = s_staff.text_fullname,
+         Date = Day,
+         Time = Time,
+         Service = `Service Name.`,
+         Booked  = Booked,
+         Attended = Attended,
+         Latecancel = `Late Cancels`,
+         )
+  
+```
+
+# Split the payroll table into studio and virtual and then join
+
+```{r s_classes-v_classes}
+
+# Split the table based on Service Names starting with "IN STUDIO"
+s_classes <- classes_held  %>%
+  filter(grepl("^IN STUDIO", Service)) %>%
+  rename(studio_class = Service, s_bk = Booked, 
+         s_at = Attended, s_lc = Latecancel)
+
+# Split the table based on Service Names starting with "Virtual via Zoom"
+v_classes <- classes_held %>%
+  filter(grepl("^Virtual via Zoom", Service)) %>%
+  rename(virtual_class = Service, v_bk = Booked, 
+         v_at = Attended, v_lc = Latecancel)
+```
+
+# Create combined_sv tibble from studio and virtual
+
+```{r combined_sv}
+
+# Join columns from v_classes to s_classes and calcularte attendees
+combined_sv <- s_classes %>%
+  left_join(v_classes, by = c("Instructor", "Date", "Time"))
+
+# Replace NAs in column 'virtual_class' with "None"
+combined_sv$virtual_class[is.na(combined_sv$virtual_class)] <- "None"
+
+# Replace NAs in columns 'v_bkooked', 'v_atttended', and 'v_latecancel' with zeros
+combined_sv$v_bk[is.na(combined_sv$v_bk)] <- 0
+combined_sv$v_at[is.na(combined_sv$v_at)] <- 0
+combined_sv$v_lc[is.na(combined_sv$v_lc)] <- 0
+```
+
+# Add new columns to combined_sv
+
+```{r combined_sv_plus}
+
+combined_sv_plus <- combined_sv %>%
+  # Add Tot_atttendees
+  mutate(Tot_atttendees = s_at + s_lc + v_at + v_lc) %>%
+  # Add Base based on whether zero attendees or more
+  mutate(Base = ifelse(Tot_atttendees == 0, 
+                       instructor_info$Base0[match(Instructor,instructor_info$Instructor)],
+                       instructor_info$Base1[match(Instructor, instructor_info$Instructor)])) %>%
+  # Add columns from instructor_info
+  left_join(instructor_info %>% select(Instructor, PP7, Cap), by = "Instructor") %>%
+  # Add Bonus, Calc, Pay, and Overage
+  mutate(Bonus = ifelse(Tot_atttendees - 6 > 0, (Tot_atttendees - 6) * PP7, 0)) %>%
+  mutate(Calc = Base + Bonus) %>%
+  mutate(Pay = ifelse(Calc > Cap, Cap, Calc)) %>%
+  mutate(Overage = Calc - Pay)
+
+  
+```
+
+# Create PDFs for each instructor
+
+```{r eval=FALSE, include=FALSE}
+unique_instructors <- unique(combined_sv$Instructor)
+
+for (i in 1:NROW(unique_instructors)) {
+  # grab instructor name, data, and classes they taught this time period
+    instructor_name <- unique_instructors[i] # Each row is a unique instructor
+    instructor_data <- dplyr::filter(instructor_info, Instructor == instructor_name)
+    class_data <- combined_sv_plus %>%
+      filter(Instructor == instructor_name) %>%
+      select (Instructor, studio_class, Date, Time, s_at, v_at, Tot_atttendees, Pay) 
+    quarto::quarto_render(
+        input = "template.qmd",
+        output_file = paste0("payroll-",
+                             instructor_name, ".pdf"),
+        execute_params = list(
+            iname = instructor_name,
+            idata = jsonlite::toJSON(instructor_data),
+            cdata = jsonlite::toJSON(class_data) # Serialize the data frame
+        )
+    )
+}
+```
+
+# Display by Instructor
+
+```{r eval=FALSE, include=FALSE}
+
+# Create a shiny app
+ui <- fluidPage(
+  selectInput(inputId = "instructorInput", 
+              label = "Select Instructor",
+              choices = unique(combined_sv$Instructor)),
+  tableOutput(outputId = "filteredTable")
+)
+
+server <- function(input, output) {
+  output$filteredTable <- renderTable({
+    filter_data <- combined_sv[combined_sv$Instructor == input$instructorInput, ]
+    filter_data
+  })
+}
+
+shinyApp(ui = ui, server = server)
+```
+
+# Export the combined_sv_plus
+
+```{r}
+# Export joined_class_next to a CSV file
+write.csv(combined_sv_plus, file = "combined_sv.csv", row.names = FALSE)
+```
+
