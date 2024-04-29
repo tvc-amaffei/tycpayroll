@@ -1,14 +1,14 @@
 ---
-title: "TYC Payroll December 2023"
+title: "The Yoga Collaborative Instructor Payroll"
 format: 
-  pdf: default
-editor: visual
+  pdf: 
+    pdf-engine: xelatex
 params:
-  iname: "Olivia Riddiford"
-  idata: |-
-          [{"Instructor":"Olivia Riddiford","Type":"Inst","Email":"livridd@gmail.com","Base0":15,"Base1":40,"PP7":7,"Cap":120,"Curryear":5,"Anniversary":"May 1st"}]
+  iname: "Elaine Cody"
+  pdata: |-
+          [{"hourly_pay_rate":"Year 7","pp7":8,"cap":130,"base0":15,"base1":45}]
   cdata: |-
-          [{"Instructor":"Olivia Riddiford","studio_class":"IN STUDIO Yoga Flow","Date":"Dec 2, 2023","Time":"8:00am","s_at":10,"v_at":5,"Tot_atttendees":15,"Pay":103},{"Instructor":"Olivia Riddiford","studio_class":"IN STUDIO Yoga Sculpt","Date":"Dec 5, 2023","Time":"6:00am","s_at":2,"v_at":1,"Tot_atttendees":3,"Pay":40},{"Instructor":"Olivia Riddiford","studio_class":"IN STUDIO Yoga Sculpt","Date":"Dec 7, 2023","Time":"6:00am","s_at":1,"v_at":0,"Tot_atttendees":1,"Pay":40},{"Instructor":"Olivia Riddiford","studio_class":"IN STUDIO Yoga Flow","Date":"Dec 9, 2023","Time":"8:00am","s_at":7,"v_at":4,"Tot_atttendees":11,"Pay":75},{"Instructor":"Olivia Riddiford","studio_class":"IN STUDIO Yoga Sculpt","Date":"Dec 10, 2023","Time":"8:00am","s_at":8,"v_at":0,"Tot_atttendees":8,"Pay":54},{"Instructor":"Olivia Riddiford","studio_class":"IN STUDIO Yoga Sculpt","Date":"Dec 12, 2023","Time":"6:00am","s_at":4,"v_at":0,"Tot_atttendees":4,"Pay":40},{"Instructor":"Olivia Riddiford","studio_class":"IN STUDIO Yoga Sculpt","Date":"Dec 14, 2023","Time":"6:00am","s_at":4,"v_at":1,"Tot_atttendees":5,"Pay":40},{"Instructor":"Olivia Riddiford","studio_class":"IN STUDIO Flex & Flow","Date":"Dec 18, 2023","Time":"8:00am","s_at":3,"v_at":0,"Tot_atttendees":3,"Pay":40},{"Instructor":"Olivia Riddiford","studio_class":"IN STUDIO Yoga Sculpt","Date":"Dec 19, 2023","Time":"6:00am","s_at":3,"v_at":2,"Tot_atttendees":5,"Pay":40},{"Instructor":"Olivia Riddiford","studio_class":"IN STUDIO Yoga Sculpt","Date":"Dec 21, 2023","Time":"6:00am","s_at":7,"v_at":0,"Tot_atttendees":7,"Pay":47},{"Instructor":"Olivia Riddiford","studio_class":"IN STUDIO Yoga Sculpt","Date":"Dec 28, 2023","Time":"6:00am","s_at":3,"v_at":1,"Tot_atttendees":4,"Pay":40}] 
+          [{"instructor":"Elaine Cody","date":"Dec 5, 2023","time":"8:00am","short_service":"Slow Vinyasa Flow","stype":"Classes","at.s":9,"lc.s":0,"at.v":4,"total":13,"hourly_pay_rate":"Year 7","final_pay":101},{"instructor":"Elaine Cody","date":"Dec 5, 2023","time":"9:30am","short_service":"Gentle Yoga for EVERY Body","stype":"Classes","at.s":20,"lc.s":0,"at.v":8,"total":28,"hourly_pay_rate":"Year 7","final_pay":221},{"instructor":"Elaine Cody","date":"Dec 7, 2023","time":"9:30am","short_service":"Gentle Yoga for EVERY Body","stype":"Classes","at.s":18,"lc.s":0,"at.v":5,"total":23,"hourly_pay_rate":"Year 7","final_pay":181},{"instructor":"Elaine Cody","date":"Dec 7, 2023","time":"11:00am","short_service":"Gentle Therapeutic Yoga for Building Better Balance","stype":"Events","at.s":13,"lc.s":0,"at.v":1,"total":14,"hourly_pay_rate":"Event Rate 70%","final_pay":171.5},{"instructor":"Elaine Cody","date":"Dec 12, 2023","time":"8:00am","short_service":"Slow Vinyasa Flow","stype":"Classes","at.s":10,"lc.s":0,"at.v":5,"total":15,"hourly_pay_rate":"Year 7","final_pay":117},{"instructor":"Elaine Cody","date":"Dec 12, 2023","time":"9:30am","short_service":"Gentle Yoga for EVERY Body","stype":"Classes","at.s":21,"lc.s":1,"at.v":4,"total":26,"hourly_pay_rate":"Year 7","final_pay":205},{"instructor":"Elaine Cody","date":"Dec 14, 2023","time":"9:30am","short_service":"Gentle Yoga for EVERY Body","stype":"Classes","at.s":20,"lc.s":0,"at.v":6,"total":26,"hourly_pay_rate":"Year 7","final_pay":205},{"instructor":"Elaine Cody","date":"Dec 17, 2023","time":"3:00pm","short_service":"Honoring the Winter Solstice Candlelight Flow & Restorative Rest","stype":"Events","at.s":13,"lc.s":1,"at.v":2,"total":16,"hourly_pay_rate":"Event Rate 70%","final_pay":327.6},{"instructor":"Elaine Cody","date":"Dec 19, 2023","time":"8:00am","short_service":"Slow Vinyasa Flow","stype":"Classes","at.s":14,"lc.s":0,"at.v":3,"total":17,"hourly_pay_rate":"Year 7","final_pay":133},{"instructor":"Elaine Cody","date":"Dec 19, 2023","time":"9:30am","short_service":"Gentle Yoga for EVERY Body","stype":"Classes","at.s":19,"lc.s":0,"at.v":5,"total":24,"hourly_pay_rate":"Year 7","final_pay":189},{"instructor":"Elaine Cody","date":"Dec 21, 2023","time":"9:30am","short_service":"Gentle Yoga for EVERY Body","stype":"Classes","at.s":13,"lc.s":0,"at.v":3,"total":16,"hourly_pay_rate":"Year 7","final_pay":125},{"instructor":"Elaine Cody","date":"Dec 28, 2023","time":"9:30am","short_service":"Gentle Yoga for EVERY Body","stype":"Classes","at.s":19,"lc.s":0,"at.v":10,"total":29,"hourly_pay_rate":"Year 7","final_pay":229},{"instructor":"Elaine Cody","date":"Dec 17, 2023","time":"3:00pm","stype":"Events","at.s":0,"lc.s":0,"at.v":2,"total":2}] 
 ---
 
 ```{r setup}
@@ -19,39 +19,51 @@ knitr::opts_chunk$set(echo = FALSE)
 options(knitr.kable.NA = '')
 library(tidyverse)
 library(knitr)
+library(dplyr)
+library(gt)
+library(scales)
 ```
 
 ```{r class-instructor-variables}
-idata <- jsonlite::fromJSON(params$idata)
+pdata <- jsonlite::fromJSON(params$pdata)
 ctable <- jsonlite::fromJSON(params$cdata)
-ipay <- sum(ctable$Pay)
+ipay <- sum(ctable$final_pay, na.rm = TRUE)
 ```
 
-Dear `r idata$Instructor`,
+Dear `r params$iname`,
 
-Please find below the details of classes you taught at TYC.
-Your pay this month is \$`r ipay`.
+Please find the details below based on the classes you taught at TYC this month.
+The calculation of your payout is based on the following parameters:
 
-The calculation of your salary is based on the following parameters:
-
-| Base 0 Clients    | Base 1+ Clients   | PP7 (\*)        | Cap             |
-|-------------------|-------------------|-----------------|-----------------|
-| \$`r idata$Base0` | \$`r idata$Base1` | \$`r idata$PP7` | \$`r idata$Cap` |
+| Base 0 Clients          | Base 1+ Clients         | PP7 (\*)              | Cap                   |
+|-------------------------|-------------------------|-----------------------|-----------------------|
+| `r dollar(pdata$base0)` | `r dollar(pdata$base1)` | `r dollar(pdata$pp7)` | `r dollar(pdata$cap)` |
 
 (\*) PP7 = Per person starting with 7th Student
 
-The classes you taught are shown below
+The classes you taught are shown below: (if you taught a virtual class as well, the total represents the combined number of clients)
 
-```{r class-table}
+```{=tex}
+\begingroup\setlength{\LTleft}{0pt minus 500pt}\setlength{\LTright}{0pt minus 500pt}\fontsize{5pt}{7pt}\selectfont\addtolength{\tabcolsep}{-3pt}
+```
+```{r tbl, results='asis'}
+#| include: true
+#| echo: false
 
-knitr::kable(ctable[2:8],
-             col.names = c("Class",
-                           "Date",
-                           "Time",
-                           "Studio",
-                           "Virtual",
-                           "Total",
-                           "Pay"))
+gt(ctable[2:12], rowname_col = "instructor") |>
+   fmt_currency(columns = final_pay) |>
+   fmt_integer(columns = c(at.s, lc.s, at.v, total)) |>
+   cols_label(date = "Date", time = "Time", short_service = "Service",
+              stype = "Stype", at.s = "Studio", lc.s = "LateC", at.v = "Virtual",
+              ex = "Ex",
+              total = "Total", hourly_pay_rate = "Hourly Pay Rate",
+              final_pay = "Pay") |>
+  as_latex()
 ```
 
-Total Pay = \$`r ipay`
+```{=tex}
+\endgroup
+```
+Total Pay = `r dollar(ipay)`
+
+Created on `r format(Sys.Date(), "%B %d, %Y")`
