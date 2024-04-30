@@ -1,0 +1,408 @@
+---
+title: "Monthly Payroll"
+format: html
+editor: visual
+params:
+  month: "03"
+  year: "2024"
+  payroll_folder_url: "https://drive.google.com/drive/folders/1si6xal0w6JPyy-m7RVm3zJ9q7n0tf2tm"
+  google_user_email: "andymaffei@gmail.com"
+  payrate_file_name: "tyc-payrates"
+  payroll_csv_prefix: "tyc_wlpayroll"
+  instructor_file_name: "tyc-instructors"
+  payroll_csvs_folder_name: "payroll_csvs"
+  instructor_pdfs_folder_name: "instructor_pdfs"
+---
+
+## TYC Monthly Payroll
+
+This is a log of the monthly payroll run for The Yoga Collaborative.
+
+## Initialize the payroll run
+
+```{r initialize-run}
+#| echo: false
+#| include: false
+#| results: hide
+
+# Clear workspace
+
+# Load required libraries
+library(tidyverse)
+library(shiny)
+library(quarto)
+library(googledrive)
+library(googlesheets4)
+library(gt)
+
+# Authorize google sheets access 
+gs4_auth(email=params$google_user_email)
+
+# Authenticate with Google Drive
+drive_auth(email=params$google_user_email)
+
+# Extract the ID from the URL
+payroll_folder_id <- gsub(".*/folders/(.*)$", "\\1", 
+                  params$payroll_folder_url)
+
+# Get directory listing for the top level payroll folder
+payroll_folder_dirlist <- drive_ls(path = 
+                                     as_id(payroll_folder_id))
+
+# Get payrate spreadsheet reference from dirlist
+payrate_file <-  payroll_folder_dirlist |>
+  filter(name == params$payrate_file_name)
+
+# Get instructor spreadsheet reference from dirlist
+instructor_file <- payroll_folder_dirlist |>
+  filter(name == params$instructor_file_name)
+
+# Get payroll folder reference from dirlist
+payrollcsvs_folder <- payroll_folder_dirlist |>
+  filter(name == params$payroll_csvs_folder_name)
+
+# Get instructor pdf folder ref from dirlist
+instructorpdf_folder <- payroll_folder_dirlist |>
+  filter(name == params$instructor_pdfs_folder_name)
+
+instructorpdf_dirlist <- drive_ls(path = 
+                                     as_id(instructorpdf_folder$id))
+
+# Delete all files in PDF folder
+drive_trash(file = instructorpdf_dirlist)
+
+# Create local csv and pdf subdirectories
+dir.create("csvs",showWarnings = FALSE)
+dir.create("instructor_pdfs",showWarnings = FALSE)
+
+```
+
+## Get Payrate Table for this month
+
+```{r get-payrate-table}
+#| echo: false
+#| include: true
+
+# Generate payrate table
+payrate_tbl <- read_sheet(payrate_file$id) |>
+  rename(
+    hourly_pay_rate = `WL Hourly Payrate`,
+    pp7 = PP7,
+    cap = Cap,
+    base0 = `Base 0`,
+    base1 = `Base 1 Plus`)
+
+# Display the table in the report
+gt(payrate_tbl, rowname_col = "hourly_pay_rate") |>
+   fmt_currency(columns = c(cap, base1, pp7, base0)) |>
+   cols_label(hourly_pay_rate = "Hourly Pay Rate", 
+              cap = "Cap", 
+              base1 = "Base 1",
+              pp7 = "PP7",
+              base0 = "Base 0")
+```
+
+## Get Instructor Table for this Month
+
+```{r get-instructor-table}
+#| echo: false
+#| include: true
+
+# Generate Instructor Table
+
+instructor_tbl <- read_sheet(instructor_file$id) |>
+  rename(
+    name = Name,
+    instructor_pay_rate = 'Hourly Pay Rate',
+    anniversary_date = 'Anniversary Date'
+  )
+
+# Display the table in the report
+gt(instructor_tbl) |>
+   cols_label(name = "Name", 
+              instructor_pay_rate = "Hourly Pay Rate",
+              anniversary_date = "Anniversary Date")
+```
+
+## Read this months WL Payroll CSV file
+
+```{r read-this-months-payroll-csv}
+#| echo: false
+#| include: true
+
+# Get directory listing for the top level payroll folder
+payrollcsvs_folder_dirlist <- drive_ls(path = 
+                                     as_id(payrollcsvs_folder$id))
+
+# Construct the folder and file names
+payroll_file_name <- paste("tyc_wlpayroll-",
+                           params$year,
+                           params$month,".csv",
+                           sep = "")
+
+# Find the csv file
+payrollcsv_file <-  payrollcsvs_folder_dirlist |>
+  filter(name == payroll_file_name)
+
+# Download the file
+drive_download(payrollcsv_file$id, 
+               overwrite = TRUE)
+
+# Read the file into a tibble
+services_held <- read_csv(
+  payroll_file_name,
+  col_types = cols(
+    s_staff.text_fullname = col_character(),
+    Client = col_skip(),
+    Email = col_skip(),
+    Phone = col_skip(),
+    `Member ID` = col_skip(),
+    Day = col_character(),
+    Time = col_character(),
+    # Day = col_date(format = "%b %d, %Y"),
+    # Time = col_time(format = "%I:%M%p"),
+    `Service Name.` = col_character(),
+    `Service Type` = col_character(),
+    `Commission Sales` = col_skip(),
+    Booked = col_integer(),
+    Attended = col_integer(),
+    `No shows` = col_skip(),
+    `Late Cancels` = col_integer(),
+    `Base Rate` = col_skip(),
+    Bonus = col_skip(),
+    Total = col_character(),
+    `Tip Amount` = col_skip(),
+    `Hourly Pay Rate` = col_character(),
+  )
+)
+
+# Cleanup - rename columns and adjust
+
+services_held <- services_held |>
+    mutate(wl_calc_pay = parse_number(Total)) |>
+    mutate(short_service = ifelse(
+      grepl("^ *[Ii][Nn] [Ss][Tt][Uu][Dd][Ii][Oo] *", `Service Name.`),
+      gsub("^ *[Ii][Nn] [Ss][Tt][Uu][Dd][Ii][Oo] *", "",`Service Name.`),
+      gsub("^ *Virtual via Zoom *", "", `Service Name.`))) |>
+    rename(instructor = s_staff.text_fullname,
+           date = Day,
+           time = Time,
+           service_name = `Service Name.`,
+           service_type = `Service Type`,
+           bk  = Booked,
+           at = Attended,
+           lc = `Late Cancels`,
+           total = Total,
+           hourly_pay_rate = `Hourly Pay Rate`
+           )
+
+gt(services_held)
+```
+
+## Convert the WL Payroll file to our own liking
+
+##### Merge studio and virtual into single classes
+
+```{r merge-studio-and-virtual}
+#| echo: false
+#| include: true
+
+# Split the table based on Service Names starting with "IN STUDIO"
+s_services <- services_held |>
+  filter(grepl("[Ii][Nn] [Ss][Tt][Uu][Dd][Ii][Oo]", service_name))
+
+# Split the table based on Service Names starting with "Virtual via Zoom"
+v_services <- services_held |>
+  filter(grepl("Virtual via Zoom", service_name))
+
+# Join columns from v_services to s_services and calculate attendees
+# changing NAs to 0
+combined_sv <- s_services |>
+  left_join(v_services, by = c(
+    "instructor", "date", "time", "service_type" ),
+    relationship = "one-to-one",
+    suffix = c(".s",".v"))
+
+# Generate a table of rows in v_services that did not match rows in s_services
+v_services_not_in_s_services <- v_services |>
+  anti_join(s_services, by = c(
+    "instructor", "date", "time", "service_type", "short_service")) |>
+  rename(
+    service_name.v = service_name,
+    bk.v = bk,
+    at.v = at,
+    lc.v = lc,
+    total.v = total,
+    hourly_pay_rate.v = hourly_pay_rate,
+    wl_calc_pay.v = wl_calc_pay,
+    short_service.v = short_service
+  )
+  
+# Append these rows to combined_sv
+combined_sv <- bind_rows(combined_sv, v_services_not_in_s_services)
+
+# Change NAs to 0 for people counts
+combined_sv <- combined_sv |>
+  mutate(bk.s = ifelse(is.na(bk.s), 0, bk.s)) |>
+  mutate(at.s = ifelse(is.na(at.s), 0, at.s)) |>
+  mutate(lc.s = ifelse(is.na(lc.s), 0, lc.s)) |>
+  mutate(bk.v = ifelse(is.na(bk.v), 0, bk.v)) |>
+  mutate(at.v = ifelse(is.na(at.v), 0, at.v)) |>
+  mutate(lc.v = ifelse(is.na(lc.v), 0, lc.v)) |>
+  mutate(wl_calc_pay.s = ifelse(is.na(wl_calc_pay.s), 0, wl_calc_pay.s)) |>
+  mutate(wl_calc_pay.v = ifelse(is.na(wl_calc_pay.v), 0, wl_calc_pay.v)) |>
+  mutate(total_attendees = at.s + lc.s + at.v)
+```
+
+##### Add base, pp7, and cap based on hourly payrate WL attaches to service offered
+
+```{r add-payrate-columns-by-hourly-payrate-name-for-class}
+#| echo: false
+#| include: true
+
+# Add base0, base1, pp7, and cap rates as columns by referencing payrate table
+
+combined_sv_w_pay <- combined_sv |>
+  left_join(payrate_tbl, by = c("hourly_pay_rate.s" = "hourly_pay_rate")) |>
+  rename(
+    pp7 = pp7,
+    cap = cap,
+    base0 = base0,
+    base1 = base1
+  )
+
+```
+
+##### Calculate base_pay, bonus_pay, and total_pay for each service/class
+
+```{r calculate-pay-per-class}
+#| echo: false
+#| include: true
+
+# Add the base_pay column for classes
+combined_sv_w_pay <- combined_sv_w_pay |>
+  mutate(
+    base_pay = ifelse(service_type == "Classes" & total_attendees == 0,
+                           base0,
+                           base1),
+    bonus_pay = ifelse(service_type == "Classes" & total_attendees - 6 > 0,
+                            (total_attendees - 6) * pp7,
+                            0),
+    final_pay = ifelse(service_type == "Classes",
+                            base_pay + bonus_pay,
+                            0))
+
+# Cap the final_pay column for classes
+combined_sv_w_pay <- combined_sv_w_pay |>
+  mutate(final_pay = ifelse(service_type == "Classes" & final_pay > cap,
+                            cap,
+                            final_pay))
+
+```
+
+##### Calculate pay for events by adding in-studio and virtual and applying given event rate
+
+```{r}
+#| echo: false
+#| include: true
+
+# Add the final_pay column for events
+# Note that WL has already calculated the pay for events using 70%
+combined_sv_w_pay <- combined_sv_w_pay |>
+  mutate(final_pay = ifelse(service_type == "Events",
+                            (wl_calc_pay.s + wl_calc_pay.v) * 1.0,
+                            final_pay))
+```
+
+##### Create smaller table with fewer columns with nicer names
+
+```{r}
+#| echo: false
+#| include: true
+
+services_data_all <- combined_sv_w_pay |>
+  select(instructor, date, time, short_service.s, service_type, 
+         at.s, lc.s, at.v, total_attendees, hourly_pay_rate.s, final_pay) |>
+  rename(
+    short_service = short_service.s,
+    hourly_pay_rate = hourly_pay_rate.s,
+    total = total_attendees,
+    stype = service_type)
+
+# Print out table
+gt(services_data_all)
+```
+
+## Create a summary of pay issued to all instructors
+
+```{r}
+#| echo: false
+#| include: true
+
+# Create a summary table of services_data_all by instructor
+services_data_summary <- services_data_all |>
+  group_by(instructor) |>
+  summarize(
+    classes = sum(stype == "Classes"),
+    participants = sum(total),
+    pay = sum(final_pay),
+  )
+
+# Print out summary
+gt(services_data_summary)
+```
+
+## Generate Instructor PDF files
+
+```{r}
+#| echo: false
+#| include: false
+
+unique_instructors <- unique(combined_sv_w_pay$instructor)
+
+for (i in 1:NROW(unique_instructors)) {
+  # grab instructor name
+    instructor_name <- unique_instructors[i] # Each row is a unique instructor
+    
+  # get instructor payinfo by looking in instructor_tbl by instructor_name
+   instructor_payrate <- instructor_tbl |>
+      filter(name == instructor_name) |>
+      select(instructor_pay_rate)
+    
+  # get payrate data by looking in payrate_tbl by instructor
+    payrate_data <- payrate_tbl |>
+      filter(hourly_pay_rate == instructor_payrate$instructor_pay_rate) |>
+      select(hourly_pay_rate, pp7, cap, base0, base1)
+    
+  # get service data by looking in combined_sv_w_pay by instructor
+    service_data <- services_data_all |>
+      filter(instructor == instructor_name)
+    
+  # render the template
+    quarto::quarto_render(
+        input = "template2.qmd",
+        output_file = paste0("payroll-", instructor_name, ".pdf"),
+        execute_params = list(
+            iname = instructor_name,
+            pdata = jsonlite::toJSON(payrate_data),
+            cdata = jsonlite::toJSON(service_data) # Serialize the data frame
+        )
+    )
+    
+  # upload the pdf to the pdf folder
+    drive_upload(paste0("payroll-", instructor_name, ".pdf"),
+                 path = instructorpdf_folder$id,
+                 overwrite = TRUE)
+    # Move the pdf to the instructor_pdfs folder
+    file.rename(paste0("payroll-", instructor_name, ".pdf"),
+                paste0("instructor_pdfs/payroll-", instructor_name, ".pdf"))
+    
+}
+```
+
+## Cleanup
+
+```{r}
+# Delete csv files
+
+```

@@ -1,0 +1,68 @@
+---
+title: "The Yoga Collaborative Instructor Payroll"
+format: 
+  pdf: 
+    pdf-engine: xelatex
+params:
+  iname: "Elaine Cody"
+  pdata: |-
+          [{"hourly_pay_rate":"Year 7","pp7":8,"cap":130,"base0":15,"base1":45}]
+  cdata: |-
+          [{"instructor":"Elaine Cody","date":"Mar 5, 2024","time":"8:00am","short_service":"Slow Vinyasa Flow","stype":"Classes","at.s":13,"lc.s":0,"at.v":5,"total":18,"hourly_pay_rate":"Special OG","final_pay":141},{"instructor":"Elaine Cody","date":"Mar 5, 2024","time":"9:30am","short_service":"Gentle Yoga for EVERY Body","stype":"Classes","at.s":17,"lc.s":1,"at.v":7,"total":25,"hourly_pay_rate":"Special OG","final_pay":150},{"instructor":"Elaine Cody","date":"Mar 7, 2024","time":"9:30am","short_service":"Gentle Yoga for EVERY Body","stype":"Classes","at.s":20,"lc.s":0,"at.v":7,"total":27,"hourly_pay_rate":"Special OG","final_pay":150},{"instructor":"Elaine Cody","date":"Mar 12, 2024","time":"8:00am","short_service":"Slow Vinyasa Flow","stype":"Classes","at.s":6,"lc.s":0,"at.v":7,"total":13,"hourly_pay_rate":"Special OG","final_pay":101},{"instructor":"Elaine Cody","date":"Mar 12, 2024","time":"9:30am","short_service":"Gentle Yoga for EVERY Body","stype":"Classes","at.s":18,"lc.s":0,"at.v":8,"total":26,"hourly_pay_rate":"Special OG","final_pay":150},{"instructor":"Elaine Cody","date":"Mar 14, 2024","time":"9:30am","short_service":"Gentle Yoga for EVERY Body","stype":"Classes","at.s":16,"lc.s":0,"at.v":7,"total":23,"hourly_pay_rate":"Special OG","final_pay":150},{"instructor":"Elaine Cody","date":"Mar 14, 2024","time":"11:00am","short_service":"Gentle Therapeutic Yoga for Building Better Balance","stype":"Events","at.s":10,"lc.s":0,"at.v":2,"total":12,"hourly_pay_rate":"Event Rate 70%","final_pay":0},{"instructor":"Elaine Cody","date":"Mar 16, 2024","time":"11:00am","short_service":"Finding Equanimity and Ease at the Spring Equinox","stype":"Events","at.s":15,"lc.s":1,"at.v":0,"total":16,"hourly_pay_rate":"FREE Info Session Rate","final_pay":0},{"instructor":"Elaine Cody","date":"Mar 19, 2024","time":"8:00am","short_service":"Slow Vinyasa Flow","stype":"Classes","at.s":16,"lc.s":0,"at.v":5,"total":21,"hourly_pay_rate":"Special OG","final_pay":150},{"instructor":"Elaine Cody","date":"Mar 19, 2024","time":"9:30am","short_service":"Gentle Yoga for EVERY Body","stype":"Classes","at.s":18,"lc.s":0,"at.v":5,"total":23,"hourly_pay_rate":"Special OG","final_pay":150},{"instructor":"Elaine Cody","date":"Mar 21, 2024","time":"9:30am","short_service":"Gentle Yoga for EVERY Body","stype":"Classes","at.s":20,"lc.s":0,"at.v":8,"total":28,"hourly_pay_rate":"Special OG","final_pay":150},{"instructor":"Elaine Cody","date":"Mar 21, 2024","time":"11:00am","short_service":"Gentle Therapeutic Yoga for Building Better Balance","stype":"Events","at.s":10,"lc.s":0,"at.v":2,"total":12,"hourly_pay_rate":"Event Rate 70%","final_pay":0},{"instructor":"Elaine Cody","date":"Mar 26, 2024","time":"8:00am","short_service":"Slow Vinyasa Flow","stype":"Classes","at.s":12,"lc.s":0,"at.v":7,"total":19,"hourly_pay_rate":"Special OG","final_pay":149},{"instructor":"Elaine Cody","date":"Mar 26, 2024","time":"9:30am","short_service":"Gentle Yoga for EVERY Body","stype":"Classes","at.s":20,"lc.s":0,"at.v":3,"total":23,"hourly_pay_rate":"Special OG","final_pay":150},{"instructor":"Elaine Cody","date":"Mar 28, 2024","time":"9:30am","short_service":"Gentle Yoga for EVERY Body","stype":"Classes","at.s":20,"lc.s":1,"at.v":5,"total":26,"hourly_pay_rate":"Special OG","final_pay":150},{"instructor":"Elaine Cody","date":"Mar 28, 2024","time":"11:00am","short_service":"Gentle Therapeutic Yoga for Building Better Balance","stype":"Events","at.s":10,"lc.s":0,"at.v":2,"total":12,"hourly_pay_rate":"Event Rate 70%","final_pay":0}] 
+---
+
+```{r setup}
+#| echo: false
+#| results: hide
+#| message: false
+knitr::opts_chunk$set(echo = FALSE)
+options(knitr.kable.NA = '')
+library(tidyverse)
+library(knitr)
+library(dplyr)
+library(gt)
+library(scales)
+```
+
+```{r class-instructor-variables}
+pdata <- jsonlite::fromJSON(params$pdata)
+ctable <- jsonlite::fromJSON(params$cdata)
+ipay <- sum(ctable$final_pay, na.rm = TRUE)
+```
+
+Dear `r params$iname`,
+
+Please find the details below based on the classes you taught at TYC this month.
+The calculation of your payout is based on the following parameters:
+
+| Base 0 Clients          | Base 1+ Clients         | PP7 (\*)              | Cap                   |
+|-------------------------|-------------------------|-----------------------|-----------------------|
+| `r dollar(pdata$base0)` | `r dollar(pdata$base1)` | `r dollar(pdata$pp7)` | `r dollar(pdata$cap)` |
+
+(\*) PP7 = Per person starting with 7th Student
+
+The classes you taught are shown below: (if you taught a virtual class as well, the total represents the combined number of clients)
+
+```{=tex}
+\begingroup\setlength{\LTleft}{0pt minus 500pt}\setlength{\LTright}{0pt minus 500pt}\fontsize{5pt}{7pt}\selectfont\addtolength{\tabcolsep}{-3pt}
+```
+```{r tbl, results='asis'}
+#| include: true
+#| echo: false
+
+gt(ctable[2:11], rowname_col = "instructor") |>
+   fmt_currency(columns = final_pay) |>
+   fmt_integer(columns = c(at.s, lc.s, at.v, total)) |>
+   cols_label(date = "Date", time = "Time", short_service = "Service",
+              stype = "Stype", at.s = "Studio", lc.s = "LateC", at.v = "Virtual",
+              total = "Total", hourly_pay_rate = "Hourly Pay Rate",
+              final_pay = "Pay") |>
+  as_latex()
+```
+
+```{=tex}
+\endgroup
+```
+Total Pay = `r dollar(ipay)`
+
+Created on `r format(Sys.Date(), "%B %d, %Y")`

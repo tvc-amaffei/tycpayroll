@@ -1,0 +1,57 @@
+#!/bin/bash
+
+# This is a shell script that renders a quarto document to an html file
+# using the quarto command line interface. The script is intended to be
+# run from the root of the repository.
+
+# The two arguments to the script are the year and month of the payroll
+# period. The script will render the quarto document for that period.
+
+# The script assumes that the quarto document is in the `quarto` directory
+# and that the output will be written to the `logs` directory.
+
+# A set of auxiliary files are also generated in the `instructor_pdfs` directory.
+# These are the pdf files created for each instructor on the payroll.
+
+# The script also assumes that the `quarto` command line interface is
+# installed and available in the path.
+
+# Delete all files found in the instructor_pdfs directory
+rm -f instructor_pdfs/*
+
+# Get year and month arguments from command line
+year=$1
+month=$2
+
+#Check that month and year are valid
+if [ $month -lt 1 ] || [ $month -gt 12 ]; then
+  echo "Invalid month: $month"
+  exit 1
+fi
+
+if [ $year -lt 2024 ]; then
+  echo "Invalid year: $year"
+  exit 1
+fi
+
+# Generate path for output file for the quarto document
+# It will sit in the logs subdirectory and include the year and month
+# as well as a daytime stamp as part of the name
+timestamp=$(date +"%Y%m%d%H%M%S")
+output_file="tyc-instructor-payroll-$year$month-$timestamp.html"
+
+# Render the quarto document for the specified period including
+# the year and month arguments
+quarto render quarto/tyc-instructor-payroll.Rmd --to html --output $output_file --metadata year=$year --metadata month=$month
+
+# Check if the rendering was successful
+if [ $? -ne 0 ]; then
+  echo "Error rendering quarto document"
+  exit 1
+fi
+
+# Write message saying job is done if completed successfully
+echo "Quarto document rendered successfully to $output_file"
+
+
+
