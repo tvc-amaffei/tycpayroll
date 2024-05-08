@@ -3,7 +3,7 @@ title: "Monthly Payroll"
 format: html
 editor: visual
 params:
-  month: "03"
+  month: "15"
   year: "2024"
   payroll_folder_url: "https://drive.google.com/drive/folders/1si6xal0w6JPyy-m7RVm3zJ9q7n0tf2tm"
   google_user_email: "andymaffei@gmail.com"
@@ -152,7 +152,8 @@ drive_download(payrollcsv_file$id,
 services_held <- read_csv(
   payroll_file_name,
   col_types = cols(
-    s_staff.text_fullname = col_character(),
+  #  s_staff.text_fullname = col_character(),
+    Staff = col_character(),
     Client = col_skip(),
     Email = col_skip(),
     Phone = col_skip(),
@@ -184,17 +185,19 @@ services_held <- services_held |>
       grepl("^ *[Ii][Nn] [Ss][Tt][Uu][Dd][Ii][Oo] *", `Service Name.`),
       gsub("^ *[Ii][Nn] [Ss][Tt][Uu][Dd][Ii][Oo] *", "",`Service Name.`),
       gsub("^ *Virtual via Zoom *", "", `Service Name.`))) |>
-    rename(instructor = s_staff.text_fullname,
-           date = Day,
-           time = Time,
-           service_name = `Service Name.`,
-           service_type = `Service Type`,
-           bk  = Booked,
-           at = Attended,
-           lc = `Late Cancels`,
-           total = Total,
-           hourly_pay_rate = `Hourly Pay Rate`
-           )
+    rename(
+      # instructor = s_staff.text_fullname,
+      instructor = Staff,
+      date = Day,
+      time = Time,
+      service_name = `Service Name.`,
+      service_type = `Service Type`,
+      bk  = Booked,
+      at = Attended,
+      lc = `Late Cancels`,
+      total = Total,
+      hourly_pay_rate = `Hourly Pay Rate`
+      )
 
 gt(services_held)
 ```
@@ -393,7 +396,7 @@ for (i in 1:NROW(unique_instructors)) {
     drive_upload(paste0("payroll-", instructor_name, ".pdf"),
                  path = instructorpdf_folder$id,
                  overwrite = TRUE)
-    # Move the pdf to the instructor_pdfs folder
+  # Move the pdf to the instructor_pdfs folder
     file.rename(paste0("payroll-", instructor_name, ".pdf"),
                 paste0("instructor_pdfs/payroll-", instructor_name, ".pdf"))
     
