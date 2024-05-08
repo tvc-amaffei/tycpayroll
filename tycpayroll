@@ -19,6 +19,13 @@
 # Delete all files found in the instructor_pdfs directory
 rm -f instructor_pdfs/*
 
+# If correct number of arguments not given then prompt for year and month
+if [ $# -ne 2 ]; then
+  echo "Usage: $0 <year> <month>"
+  read -p "Enter year: " year
+  read -p "Enter month: " month
+fi
+
 # Get year and month arguments from command line
 year=$1
 month=$2
