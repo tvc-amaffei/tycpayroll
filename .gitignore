@@ -5,3 +5,5 @@
 .DS_Store
 .Renviron
 instructor_pdfs/*
+*-payroll-log.pdf
+csvs/*
