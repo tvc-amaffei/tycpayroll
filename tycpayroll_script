@@ -30,13 +30,13 @@ fi
 year=$1
 month=$2
 
-#Check that month and year are valid
-if [ $month -lt 1 ] || [ $month -gt 12 ]; then
+#Check that month and year are valid using bash conditional expressions
+if [ $month -lt 1 ] || [ $month -gt 15 ]; then
   echo "Invalid month: $month"
   exit 1
 fi
 
-if [ $year -lt 2024 ]; then
+if [ $year -lt 2020 ]; then
   echo "Invalid year: $year"
   exit 1
 fi
@@ -47,9 +47,13 @@ fi
 timestamp=$(date +"%Y%m%d%H%M%S")
 output_file="tyc-instructor-payroll-$year$month-$timestamp.html"
 
-# Render the quarto document for the specified period including
-# the year and month arguments
-quarto render quarto/tyc-instructor-payroll.Rmd --to html --output $output_file --metadata year=$year --metadata month=$month
+# Render tyc-instructor-payroll.qmd for the specified period including
+# the year and month as metadata
+
+quarto render quarto/tyc-instructor-payroll.qmd \
+  --metadata year=$year \
+  --metadata month=$month \
+  --output logs/$output_file
 
 # Check if the rendering was successful
 if [ $? -ne 0 ]; then
