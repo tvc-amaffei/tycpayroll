@@ -1,17 +1,20 @@
 ---
-title: "Monthly Payroll"
-format: html
-editor: visual
+title: "April 2024 Monthly Payroll"
+format: 
+   pdf:
+    output-file: "april-2024-payroll-log"
+    output-ext: "pdf"
 params:
-  month: "15"
+  google_user_email: "andymaffei@gmail.com"
+  month: "04"
   year: "2024"
   payroll_folder_url: "https://drive.google.com/drive/folders/1si6xal0w6JPyy-m7RVm3zJ9q7n0tf2tm"
-  google_user_email: "melissajlorusso@gmail.com"
   payrate_file_name: "tyc-payrates"
   payroll_csv_prefix: "tyc_wlpayroll"
   instructor_file_name: "tyc-instructors"
   payroll_csvs_folder_name: "payroll_csvs"
   instructor_pdfs_folder_name: "instructor_pdfs"
+editor: visual
 ---
 
 ## TYC Monthly Payroll
@@ -34,6 +37,16 @@ library(quarto)
 library(googledrive)
 library(googlesheets4)
 library(gt)
+
+# Delete all files sitting under instructor_pdfs subdirectory
+# Set the path to the subdirectory
+subdirectory_path <- "instructor_pdfs"
+
+# Get a list of all files in the subdirectory
+files <- list.files(subdirectory_path, full.names = TRUE)
+
+# Remove all files in the subdirectory
+file.remove(files)
 
 # Authorize google sheets access 
 gs4_auth(email=params$google_user_email)
@@ -61,20 +74,9 @@ instructor_file <- payroll_folder_dirlist |>
 payrollcsvs_folder <- payroll_folder_dirlist |>
   filter(name == params$payroll_csvs_folder_name)
 
-# Get instructor pdf folder ref from dirlist
-instructorpdf_folder <- payroll_folder_dirlist |>
-  filter(name == params$instructor_pdfs_folder_name)
-
-instructorpdf_dirlist <- drive_ls(path = 
-                                     as_id(instructorpdf_folder$id))
-
-# Delete all files in PDF folder
-drive_trash(file = instructorpdf_dirlist)
-
-# Create local csv and pdf subdirectories
+# Create local csv, log, and pdf subdirectories
 dir.create("csvs",showWarnings = FALSE)
 dir.create("instructor_pdfs",showWarnings = FALSE)
-
 ```
 
 ## Get Payrate Table for this month
@@ -176,6 +178,11 @@ services_held <- read_csv(
     `Hourly Pay Rate` = col_character(),
   )
 )
+
+# Move the csv file into the subdirectory
+file.rename(payroll_file_name,
+                paste0("csvs/", payroll_file_name))
+
 
 # Cleanup - rename columns and adjust
 
@@ -383,7 +390,7 @@ for (i in 1:NROW(unique_instructors)) {
     
   # render the template
     quarto::quarto_render(
-        input = "template2.qmd",
+        input = "quarto/template2.qmd",
         output_file = paste0("payroll-", instructor_name, ".pdf"),
         execute_params = list(
             iname = instructor_name,
@@ -392,10 +399,6 @@ for (i in 1:NROW(unique_instructors)) {
         )
     )
     
-  # upload the pdf to the pdf folder
-    drive_upload(paste0("payroll-", instructor_name, ".pdf"),
-                 path = instructorpdf_folder$id,
-                 overwrite = TRUE)
   # Move the pdf to the instructor_pdfs folder
     file.rename(paste0("payroll-", instructor_name, ".pdf"),
                 paste0("instructor_pdfs/payroll-", instructor_name, ".pdf"))
