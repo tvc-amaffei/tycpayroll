@@ -5,7 +5,7 @@ format:
     output-file: "april-2024-payroll-log"
     output-ext: "pdf"
 params:
-  google_user_email: "andymaffei@gmail.com"
+  google_user_email: "melissajlorusso@gmail.com"
   month: "04"
   year: "2024"
   payroll_folder_url: "https://drive.google.com/drive/folders/1si6xal0w6JPyy-m7RVm3zJ9q7n0tf2tm"
