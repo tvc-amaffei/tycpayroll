@@ -1,12 +1,12 @@
 ---
-title: "April 2024 Monthly Payroll"
+title: "June 2024 Monthly Payroll"
 format: 
    pdf:
-    output-file: "april-2024-payroll-log"
+    output-file: "june-2024-payroll-log"
     output-ext: "pdf"
 params:
   google_user_email: "melissajlorusso@gmail.com"
-  month: "04"
+  month: "06"
   year: "2024"
   payroll_folder_url: "https://drive.google.com/drive/folders/1si6xal0w6JPyy-m7RVm3zJ9q7n0tf2tm"
   payrate_file_name: "tyc-payrates"
@@ -316,12 +316,17 @@ combined_sv_w_pay <- combined_sv_w_pay |>
 #| echo: false
 #| include: true
 
-# Add the final_pay column for events
+# Add the final_pay column for events and corporate flat rates
+
 # Note that WL has already calculated the pay for events using 70%
 combined_sv_w_pay <- combined_sv_w_pay |>
   mutate(final_pay = ifelse(service_type == "Events",
                             (wl_calc_pay.s + wl_calc_pay.v) * 1.0,
-                            final_pay))
+                            final_pay)) |>
+# Add the final_pay column for corporate rates
+  mutate(final_pay = ifelse (grepl("^Corp",hourly_pay_rate.s),
+                             (wl_calc_pay.s + wl_calc_pay.v) * 1.0,
+                             final_pay))
 ```
 
 ##### Create smaller table with fewer columns with nicer names
