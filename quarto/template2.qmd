@@ -22,6 +22,7 @@ library(knitr)
 library(dplyr)
 library(gt)
 library(scales)
+library(lubridate)
 ```
 
 ```{r class-instructor-variables}
@@ -65,4 +66,4 @@ gt(ctable[2:11], rowname_col = "instructor") |>
 ```
 Total Pay = `r dollar(ipay)`
 
-Created on `r format(Sys.Date(), "%B %d, %Y")`
+Created on `r format(Sys.time(), "%B %d, %Y %H:%M:%S")`
