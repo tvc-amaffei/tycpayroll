@@ -3,23 +3,24 @@ THIS SOFTWARE GENERATES PAYROLL PDFS FOR TYC EMPLOYEES.
 INSTRICTIONS FOR GENERATING TYC PAYROLL PDFS
 --------------------------------------------
 
-0. Move the payroll csv file to the google drive folder and confirm that the
-instructor and payrate csv files are correct.
+0. Move the WL payroll csv file to the google drive folder and confirm that the
+instructor and payrate google doc files are correct.
 
 1. Use Mac Finder on your Mac to navigate to the tycpayroll folder
 
 2. Double-click on the file named `tycpayroll.Rproj` to open the RStudio
-project
+project on the mac
 
 3. Make sure the bottom right pane of R-Studio is set on the "Files" tab
 
-4. Click on the file named tyc-instructor-payroll.qmd
+4. Click on the file named tyc-instructor-payroll.qmd so that it comes up
+in the upper right-hand pane.
 
 5. Review the top of the file and make sure the following info is correct
 for this months processing:
 - title: "April 2024 Monthly Payroll"
 - output-file: "april-2024-payroll-log"
-- google_user_email: "andymaffei@gmail.com"
+- google_user_email: "melissajlarousso@gmail.com"
 - month: "04"
 - year: "2024"
 
