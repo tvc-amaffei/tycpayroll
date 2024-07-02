@@ -5,7 +5,7 @@ format:
     output-file: "june-2024-payroll-log"
     output-ext: "pdf"
 params:
-  google_user_email: "melissajlorusso@gmail.com"
+  google_user_email: "andymaffei@gmail.com"
   month: "06"
   year: "2024"
   payroll_folder_url: "https://drive.google.com/drive/folders/1si6xal0w6JPyy-m7RVm3zJ9q7n0tf2tm"
@@ -29,6 +29,7 @@ This is a log of the monthly payroll run for The Yoga Collaborative.
 #| results: hide
 
 # Clear workspace
+
 
 # Load required libraries
 library(tidyverse)
@@ -217,9 +218,18 @@ gt(services_held)
 #| echo: false
 #| include: true
 
-# Split the table based on Service Names starting with "IN STUDIO"
-s_services <- services_held |>
-  filter(grepl("[Ii][Nn] [Ss][Tt][Uu][Dd][Ii][Oo]", service_name))
+# Split the table based on Service Names starting with "IN STUDIO" or EXTERNAL
+
+s_services <- full_join(
+  services_held |> 
+    filter(grepl(
+      "[Ii][Nn] [Ss][Tt][Uu][Dd][Ii][Oo]", 
+      service_name)),
+  services_held |>
+    filter(grepl(
+      "EXTERNAL", 
+      service_name))
+)
 
 # Split the table based on Service Names starting with "Virtual via Zoom"
 v_services <- services_held |>
@@ -292,19 +302,19 @@ combined_sv_w_pay <- combined_sv |>
 # Add the base_pay column for classes
 combined_sv_w_pay <- combined_sv_w_pay |>
   mutate(
-    base_pay = ifelse(service_type == "Classes" & total_attendees == 0,
+    base_pay = ifelse(service_type == "Class" & total_attendees == 0,
                            base0,
                            base1),
-    bonus_pay = ifelse(service_type == "Classes" & total_attendees - 6 > 0,
+    bonus_pay = ifelse(service_type == "Class" & total_attendees - 6 > 0,
                             (total_attendees - 6) * pp7,
                             0),
-    final_pay = ifelse(service_type == "Classes",
+    final_pay = ifelse(service_type == "Class",
                             base_pay + bonus_pay,
                             0))
 
 # Cap the final_pay column for classes
 combined_sv_w_pay <- combined_sv_w_pay |>
-  mutate(final_pay = ifelse(service_type == "Classes" & final_pay > cap,
+  mutate(final_pay = ifelse(service_type == "Class" & final_pay > cap,
                             cap,
                             final_pay))
 
@@ -316,17 +326,12 @@ combined_sv_w_pay <- combined_sv_w_pay |>
 #| echo: false
 #| include: true
 
-# Add the final_pay column for events and corporate flat rates
-
 # Note that WL has already calculated the pay for events using 70%
 combined_sv_w_pay <- combined_sv_w_pay |>
-  mutate(final_pay = ifelse(service_type == "Events",
+  mutate(final_pay = ifelse(service_type == "Event",
                             (wl_calc_pay.s + wl_calc_pay.v) * 1.0,
-                            final_pay)) |>
-# Add the final_pay column for corporate rates
-  mutate(final_pay = ifelse (grepl("^Corp",hourly_pay_rate.s),
-                             (wl_calc_pay.s + wl_calc_pay.v) * 1.0,
-                             final_pay))
+                            final_pay))
+
 ```
 
 ##### Create smaller table with fewer columns with nicer names
@@ -358,7 +363,7 @@ gt(services_data_all)
 services_data_summary <- services_data_all |>
   group_by(instructor) |>
   summarize(
-    classes = sum(stype == "Classes"),
+    classes = sum(stype == "Class"),
     participants = sum(total),
     pay = sum(final_pay),
   )
