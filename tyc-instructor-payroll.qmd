@@ -186,12 +186,14 @@ file.rename(payroll_file_name,
 
 
 # Cleanup - rename columns and adjust
+# TODO: Need to distinguish EXTERNAL and IN STUDIO better than
+# grep string below
 
 services_held <- services_held |>
     mutate(wl_calc_pay = parse_number(Total)) |>
     mutate(short_service = ifelse(
-      grepl("^ *[Ii][Nn] [Ss][Tt][Uu][Dd][Ii][Oo] *", `Service Name.`),
-      gsub("^ *[Ii][Nn] [Ss][Tt][Uu][Dd][Ii][Oo] *", "",`Service Name.`),
+      grepl("^ *[IiEe][NnXx][ Tt][SsEe][TtRr][UuNn][DdAa][IiLl]", `Service Name.`),
+      gsub("^ *[IiEe][NnXx][ Tt][SsEe][TtRr][UuNn][DdAa][IiLl]O* *", "",`Service Name.`),
       gsub("^ *Virtual via Zoom *", "", `Service Name.`))) |>
     rename(
       # instructor = s_staff.text_fullname,
@@ -219,17 +221,14 @@ gt(services_held)
 #| include: true
 
 # Split the table based on Service Names starting with "IN STUDIO" or EXTERNAL
+# TODO: Need to distinguish EXTERNAL and IN STUDIO better than
+# grep string below (so ugly!)
 
-s_services <- full_join(
-  services_held |> 
+s_services <- services_held |> 
     filter(grepl(
-      "[Ii][Nn] [Ss][Tt][Uu][Dd][Ii][Oo]", 
-      service_name)),
-  services_held |>
-    filter(grepl(
-      "EXTERNAL", 
-      service_name))
-)
+      "[IiEe][NnXx][ Tt][SsEe][TtRr][UuNn][DdAa][IiLl]", 
+      service_name)
+      )
 
 # Split the table based on Service Names starting with "Virtual via Zoom"
 v_services <- services_held |>
@@ -419,6 +418,6 @@ for (i in 1:NROW(unique_instructors)) {
 ## All Done!!!!
 
 ```{r cleanup}
-# Delete csv files
+
 
 ```
