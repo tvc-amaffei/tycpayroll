@@ -4,6 +4,11 @@ format:
    pdf:
     output-file: "august-2024-payroll-log"
     output-ext: "pdf"
+    geometry:
+      - top=30mm
+      - left=20mm
+      - heightrounded
+    fontsize: 8pt
 params:
   google_user_email: "andymaffei@gmail.com"
   month: "08"
@@ -19,7 +24,9 @@ editor: visual
 
 ## TYC Monthly Payroll
 
-This is a log of the monthly payroll run for The Yoga Collaborative.
+This is a log of the monthly payroll for The Yoga Collaborative.
+
+Created on `r format(Sys.time(), "%B %d, %Y %H:%M:%S")`
 
 ## Initialize the payroll run
 
@@ -165,7 +172,7 @@ services_held <- read_csv(
     Time = col_character(),
     # Day = col_date(format = "%b %d, %Y"),
     # Time = col_time(format = "%I:%M%p"),
-    `Service Name.` = col_character(),
+    `Service Name` = col_character(),
     `Service Type` = col_character(),
     `Commission Sales` = col_skip(),
     Booked = col_integer(),
