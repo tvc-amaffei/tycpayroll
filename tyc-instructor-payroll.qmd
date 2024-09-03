@@ -10,7 +10,7 @@ format:
       - heightrounded
     fontsize: 8pt
 params:
-  google_user_email: "andymaffei@gmail.com"
+  google_user_email: "melissajlorusso@gmail.com"
   month: "08"
   year: "2024"
   payroll_folder_url: "https://drive.google.com/drive/folders/1si6xal0w6JPyy-m7RVm3zJ9q7n0tf2tm"
