@@ -1,12 +1,12 @@
 ---
-title: "June 2024 Monthly Payroll"
+title: "August 2024 Monthly Payroll"
 format: 
    pdf:
-    output-file: "june-2024-payroll-log"
+    output-file: "august-2024-payroll-log"
     output-ext: "pdf"
 params:
-  google_user_email: "melissajlorusso@gmail.com"
-  month: "06"
+  google_user_email: "andymaffei@gmail.com"
+  month: "08"
   year: "2024"
   payroll_folder_url: "https://drive.google.com/drive/folders/1si6xal0w6JPyy-m7RVm3zJ9q7n0tf2tm"
   payrate_file_name: "tyc-payrates"
@@ -192,15 +192,15 @@ file.rename(payroll_file_name,
 services_held <- services_held |>
     mutate(wl_calc_pay = parse_number(Total)) |>
     mutate(short_service = ifelse(
-      grepl("^ *[IiEe][NnXx][ Tt][SsEe][TtRr][UuNn][DdAa][IiLl]", `Service Name.`),
-      gsub("^ *[IiEe][NnXx][ Tt][SsEe][TtRr][UuNn][DdAa][IiLl]O* *", "",`Service Name.`),
-      gsub("^ *Virtual via Zoom *", "", `Service Name.`))) |>
+      grepl("^ *[IiEe][NnXx][ Tt][SsEe][TtRr][UuNn][DdAa][IiLl]", `Service Name`),
+      gsub("^ *[IiEe][NnXx][ Tt][SsEe][TtRr][UuNn][DdAa][IiLl]O* *", "",`Service Name`),
+      gsub("^ *Virtual via Zoom *", "", `Service Name`))) |>
     rename(
       # instructor = s_staff.text_fullname,
       instructor = Staff,
       date = Day,
       time = Time,
-      service_name = `Service Name.`,
+      service_name = `Service Name`,
       service_type = `Service Type`,
       bk  = Booked,
       at = Attended,
@@ -382,7 +382,8 @@ unique_instructors <- unique(combined_sv_w_pay$instructor)
 for (i in 1:NROW(unique_instructors)) {
   # grab instructor name
     instructor_name <- unique_instructors[i] # Each row is a unique instructor
-    
+  # Print message indicating which instructor is being processed
+    print (paste("Processing:", instructor_name))
   # get instructor payinfo by looking in instructor_tbl by instructor_name
    instructor_payrate <- instructor_tbl |>
       filter(name == instructor_name) |>
