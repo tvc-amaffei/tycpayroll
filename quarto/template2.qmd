@@ -6,9 +6,9 @@ format:
 params:
   iname: "Elaine Cody"
   pdata: |-
-          [{"hourly_pay_rate":"Year 7","pp7":8,"cap":130,"base0":15,"base1":45}]
+          [{"hourly_pay_rate":"Sub Rate","pp7":4,"cap":120,"base0":15,"base1":40}]
   cdata: |-
-          [{"instructor":"Elaine Cody","date":"Mar 5, 2024","time":"8:00am","short_service":"Slow Vinyasa Flow","stype":"Classes","at.s":13,"lc.s":0,"at.v":5,"total":18,"hourly_pay_rate":"Special OG","final_pay":141},{"instructor":"Elaine Cody","date":"Mar 5, 2024","time":"9:30am","short_service":"Gentle Yoga for EVERY Body","stype":"Classes","at.s":17,"lc.s":1,"at.v":7,"total":25,"hourly_pay_rate":"Special OG","final_pay":150},{"instructor":"Elaine Cody","date":"Mar 7, 2024","time":"9:30am","short_service":"Gentle Yoga for EVERY Body","stype":"Classes","at.s":20,"lc.s":0,"at.v":7,"total":27,"hourly_pay_rate":"Special OG","final_pay":150},{"instructor":"Elaine Cody","date":"Mar 12, 2024","time":"8:00am","short_service":"Slow Vinyasa Flow","stype":"Classes","at.s":6,"lc.s":0,"at.v":7,"total":13,"hourly_pay_rate":"Special OG","final_pay":101},{"instructor":"Elaine Cody","date":"Mar 12, 2024","time":"9:30am","short_service":"Gentle Yoga for EVERY Body","stype":"Classes","at.s":18,"lc.s":0,"at.v":8,"total":26,"hourly_pay_rate":"Special OG","final_pay":150},{"instructor":"Elaine Cody","date":"Mar 14, 2024","time":"9:30am","short_service":"Gentle Yoga for EVERY Body","stype":"Classes","at.s":16,"lc.s":0,"at.v":7,"total":23,"hourly_pay_rate":"Special OG","final_pay":150},{"instructor":"Elaine Cody","date":"Mar 14, 2024","time":"11:00am","short_service":"Gentle Therapeutic Yoga for Building Better Balance","stype":"Events","at.s":10,"lc.s":0,"at.v":2,"total":12,"hourly_pay_rate":"Event Rate 70%","final_pay":0},{"instructor":"Elaine Cody","date":"Mar 16, 2024","time":"11:00am","short_service":"Finding Equanimity and Ease at the Spring Equinox","stype":"Events","at.s":15,"lc.s":1,"at.v":0,"total":16,"hourly_pay_rate":"FREE Info Session Rate","final_pay":0},{"instructor":"Elaine Cody","date":"Mar 19, 2024","time":"8:00am","short_service":"Slow Vinyasa Flow","stype":"Classes","at.s":16,"lc.s":0,"at.v":5,"total":21,"hourly_pay_rate":"Special OG","final_pay":150},{"instructor":"Elaine Cody","date":"Mar 19, 2024","time":"9:30am","short_service":"Gentle Yoga for EVERY Body","stype":"Classes","at.s":18,"lc.s":0,"at.v":5,"total":23,"hourly_pay_rate":"Special OG","final_pay":150},{"instructor":"Elaine Cody","date":"Mar 21, 2024","time":"9:30am","short_service":"Gentle Yoga for EVERY Body","stype":"Classes","at.s":20,"lc.s":0,"at.v":8,"total":28,"hourly_pay_rate":"Special OG","final_pay":150},{"instructor":"Elaine Cody","date":"Mar 21, 2024","time":"11:00am","short_service":"Gentle Therapeutic Yoga for Building Better Balance","stype":"Events","at.s":10,"lc.s":0,"at.v":2,"total":12,"hourly_pay_rate":"Event Rate 70%","final_pay":0},{"instructor":"Elaine Cody","date":"Mar 26, 2024","time":"8:00am","short_service":"Slow Vinyasa Flow","stype":"Classes","at.s":12,"lc.s":0,"at.v":7,"total":19,"hourly_pay_rate":"Special OG","final_pay":149},{"instructor":"Elaine Cody","date":"Mar 26, 2024","time":"9:30am","short_service":"Gentle Yoga for EVERY Body","stype":"Classes","at.s":20,"lc.s":0,"at.v":3,"total":23,"hourly_pay_rate":"Special OG","final_pay":150},{"instructor":"Elaine Cody","date":"Mar 28, 2024","time":"9:30am","short_service":"Gentle Yoga for EVERY Body","stype":"Classes","at.s":20,"lc.s":1,"at.v":5,"total":26,"hourly_pay_rate":"Special OG","final_pay":150},{"instructor":"Elaine Cody","date":"Mar 28, 2024","time":"11:00am","short_service":"Gentle Therapeutic Yoga for Building Better Balance","stype":"Events","at.s":10,"lc.s":0,"at.v":2,"total":12,"hourly_pay_rate":"Event Rate 70%","final_pay":0}] 
+          [{"instructor":"Chelsea Winters","date":"Aug 1, 2025","time":"8:00am","short_service":"Slow Flow","stype":"Class","at.s":5,"lc.s":0,"at.v":0,"total":5,"hourly_pay_rate":"Year 3","final_pay":40},{"instructor":"Chelsea Winters","date":"Aug 8, 2025","time":"8:00am","short_service":"Slow Flow","stype":"Class","at.s":8,"lc.s":1,"at.v":0,"total":9,"hourly_pay_rate":"Year 3","final_pay":61},{"instructor":"Chelsea Winters","date":"Aug 15, 2025","time":"8:00am","short_service":"Slow Flow","stype":"Class","at.s":5,"lc.s":0,"at.v":0,"total":5,"hourly_pay_rate":"Year 3","final_pay":40},{"instructor":"Chelsea Winters","date":"Aug 22, 2025","time":"8:00am","short_service":"Slow Flow","stype":"Class","at.s":11,"lc.s":0,"at.v":0,"total":11,"hourly_pay_rate":"Year 3","final_pay":75},{"instructor":"Chelsea Winters","date":"Aug 29, 2025","time":"8:00am","short_service":"Slow Flow","stype":"Class","at.s":9,"lc.s":1,"at.v":0,"total":10,"hourly_pay_rate":"Year 3","final_pay":68}]  
 ---
 
 ```{r setup}
@@ -51,14 +51,12 @@ The classes you taught are shown below: (if you taught a virtual class as well, 
 #| include: true
 #| echo: false
 
-gt(ctable[2:11], rowname_col = "instructor") |>
+#gt(ctable[2:11], rowname_col = "instructor") |>
+gt(ctable[2:11]) |>
    fmt_currency(columns = final_pay) |>
    fmt_integer(columns = c(at.s, lc.s, at.v, total)) |>
-   cols_label(date = "Date", time = "Time", short_service = "Service",
-              stype = "Stype", at.s = "Studio", lc.s = "LateC", at.v = "Virtual",
-              total = "Total", hourly_pay_rate = "Hourly Pay Rate",
-              final_pay = "Pay") |>
-  as_latex()
+   cols_label(date = "Date", time = "Time", short_service = "Service", stype = "Stype", at.s = "Studio", lc.s = "LateC", at.v = "Virtual", total = "Total", hourly_pay_rate = "Pay Rate", final_pay = "Pay") |>
+as_latex()
 ```
 
 ```{=tex}

@@ -2,3 +2,7 @@ TODOS
 =====
 - [ ] Ask for email address for google drive access
 - [ ] Add error checking for NAs etc.
+- [ ] Add error checking for missing files
+- [ ] Add folder to hold payroll logs and put logs in it
+- [ ] Modify .gitignore to ignore logs folder
+
