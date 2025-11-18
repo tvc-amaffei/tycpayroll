@@ -1,0 +1,77 @@
+````quarto
+---
+title: "TYC Monthly Payroll Log"
+format:
+  pdf:
+    pdf-engine: xelatex
+params:
+  month: ""
+  year: ""
+  psummary: |-
+    []
+  pservices: |-
+    []
+---
+
+```{r setup}
+#| echo: false
+library(tidyverse)
+library(jsonlite)
+library(gt)
+library(scales)
+```
+
+```{r summary}
+#| echo: false
+## Defensive parameter handling: some render paths may not expose `params`.
+## Fall back to environment variables `PSUMMARY`/`PSERVICES` if needed.
+psummary_json <- tryCatch(
+  {
+    if (exists("params")) params$psummary else Sys.getenv("PSUMMARY", "[]")
+  }, error = function(e) Sys.getenv("PSUMMARY", "[]")
+)
+pservices_json <- tryCatch(
+  {
+    if (exists("params")) params$pservices else Sys.getenv("PSERVICES", "[]")
+  }, error = function(e) Sys.getenv("PSERVICES", "[]")
+)
+
+psummary <- as_tibble(jsonlite::fromJSON(psummary_json))
+pservices <- as_tibble(jsonlite::fromJSON(pservices_json))
+
+## Ensure `psummary` contains a `pay` column for formatting; if not, try to
+## heuristically pick a numeric column or create a zero column so rendering
+## doesn't fail.
+if (!"pay" %in% names(psummary)) {
+  numcols <- names(psummary)[vapply(psummary, is.numeric, logical(1))]
+  if (length(numcols) >= 1) {
+    paycol <- numcols[length(numcols)]
+    psummary <- psummary %>% rename(pay = !!rlang::sym(paycol))
+  } else {
+    psummary$pay <- 0
+  }
+}
+
+total_pay <- sum(psummary$pay, na.rm = TRUE)
+
+month_val <- tryCatch(if (exists("params")) params$month else Sys.getenv("PMONTH", ""), error = function(e) Sys.getenv("PMONTH", ""))
+year_val <- tryCatch(if (exists("params")) params$year else Sys.getenv("PYEAR", ""), error = function(e) Sys.getenv("PYEAR", ""))
+
+cat(sprintf("Payroll summary for %s/%s\n\n", month_val, year_val))
+
+gt(psummary) |>
+  fmt_currency(columns = pay) |>
+  cols_label(instructor = "Instructor", classes = "Classes", participants = "Participants", pay = "Pay")
+
+cat('\n\nDetailed services (first 200 rows):\n')
+
+if (nrow(pservices) > 0) {
+  gt(head(pservices, 200)) |>
+    fmt_currency(columns = final_pay) |>
+    cols_label(date = "Date", time = "Time", short_service = "Service", stype = "Type", `at.s` = "Studio", `lc.s` = "LateC", `at.v` = "Virtual", total = "Total", hourly_pay_rate = "Pay Rate", final_pay = "Pay")
+}
+
+cat(sprintf("\n\nTotal payroll amount: %s\n", scales::dollar(total_pay)))
+```
+
+````

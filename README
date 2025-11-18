@@ -24,10 +24,26 @@ for this months processing:
 - month: "04"
 - year: "2024"
 
-6. Click on the "Render" button at the top of the file shown in upper left pane
+6. Click on the "Render" button at the top of the file shown in upper left pane (or run the CLI runner below)
 
-7. The PDFs will be generated in the instructor_pdfs subfolder
+7. The PDFs will be generated in the `instructor_pdfs/` subfolder
 
-8. A log of the processing is found with a filename similar to
-"april-2024-payroll-log.pdf" in the tycpayroll folder
+8. A log of the processing is found as a timestamped `.log` file under `logs/` (this is the authoritative run record).
+
+Command-line usage (recommended for non-RStudio users):
+
+```bash
+# from the repository root
+Rscript run_payroll.R --month=10 --year=2025 --google_user_email=you@example.com
+```
+
+Outputs:
+
+- `instructor_pdfs/` — per-instructor payroll PDFs and `payroll-summary-<YYYYMM>.pdf`
+- `csvs/` — downloaded payroll CSVs and `payroll-summary-<YYYYMM>.csv`
+- `logs/` — timestamped run logs (authoritative)
+
+Note: The previous combined Quarto payroll log was removed. The script now
+produces a lightweight CSV summary `csvs/payroll-summary-<YYYYMM>.csv` and a
+PDF rendering `instructor_pdfs/payroll-summary-<YYYYMM>.pdf` of that CSV.
 

@@ -1,0 +1,36 @@
+---
+title: "TYC Payroll Summary"
+format:
+  pdf:
+    pdf-engine: xelatex
+params:
+  summary_file: ""
+  month: ""
+  year: ""
+
+---
+
+```{r setup}
+#| echo: false
+library(tidyverse)
+library(gt)
+library(scales)
+```
+
+```{r summary}
+#| echo: false
+summary_file <- params$summary_file
+if (is.null(summary_file) || summary_file == "" || !file.exists(summary_file)) {
+  stop("summary_file param missing or file not found: ", summary_file)
+}
+
+psummary <- readr::read_csv(summary_file, show_col_types = FALSE)
+
+cat(sprintf("Payroll summary for %s/%s\n\n", params$month, params$year))
+
+gt(psummary) |>
+  fmt_currency(columns = pay) |>
+  cols_label(instructor = "Instructor", classes = "Classes", participants = "Participants", pay = "Pay")
+
+cat(sprintf("\n\nTotal payroll amount: %s\n", scales::dollar(sum(psummary$pay, na.rm = TRUE))))
+```
