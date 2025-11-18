@@ -35,7 +35,7 @@ Created on `r format(Sys.time(), "%B %d, %Y %H:%M:%S")`
 #| include: false
 #| results: hide
 
-# Clear workspace
+# Clear workspace 
 
 
 # Load required libraries
@@ -164,26 +164,16 @@ services_held <- read_csv(
   col_types = cols(
   #  s_staff.text_fullname = col_character(),
     Staff = col_character(),
-    Client = col_skip(),
-    Email = col_skip(),
-    Phone = col_skip(),
-    `Member ID` = col_skip(),
-    Day = col_character(),
+    Date = col_character(),
     Time = col_character(),
-    # Day = col_date(format = "%b %d, %Y"),
-    # Time = col_time(format = "%I:%M%p"),
-    `Service Name` = col_character(),
+    Details = col_character(),
     `Service Type` = col_character(),
-    `Commission Sales` = col_skip(),
+    Pay = col_character(),
     Booked = col_integer(),
     Attended = col_integer(),
-    `No shows` = col_skip(),
+    `No Shows` = col_skip(),
     `Late Cancels` = col_integer(),
-    `Base Rate` = col_skip(),
-    Bonus = col_skip(),
-    Total = col_character(),
-    `Tip Amount` = col_skip(),
-    `Hourly Pay Rate` = col_character(),
+    `Pay Rate` = col_character(),
   )
 )
 
@@ -197,23 +187,21 @@ file.rename(payroll_file_name,
 # grep string below
 
 services_held <- services_held |>
-    mutate(wl_calc_pay = parse_number(Total)) |>
+    mutate(wl_calc_pay = parse_number(Pay)) |>
     mutate(short_service = ifelse(
-      grepl("^ *[IiEe][NnXx][ Tt][SsEe][TtRr][UuNn][DdAa][IiLl]", `Service Name`),
-      gsub("^ *[IiEe][NnXx][ Tt][SsEe][TtRr][UuNn][DdAa][IiLl]O* *", "",`Service Name`),
-      gsub("^ *Virtual via Zoom *", "", `Service Name`))) |>
+      grepl("^ *[IiEe][NnXx][ Tt][SsEe][TtRr][UuNn][DdAa][IiLl]", `Details`),
+      gsub("^ *[IiEe][NnXx][ Tt][SsEe][TtRr][UuNn][DdAa][IiLl]O* *", "",`Details`),
+      gsub("^ *Virtual via Zoom *", "", `Details`))) |>
     rename(
-      # instructor = s_staff.text_fullname,
       instructor = Staff,
-      date = Day,
+      date = Date,
       time = Time,
-      service_name = `Service Name`,
+      service_name = `Details`,
       service_type = `Service Type`,
       bk  = Booked,
       at = Attended,
       lc = `Late Cancels`,
-      total = Total,
-      hourly_pay_rate = `Hourly Pay Rate`
+      hourly_pay_rate = `Pay Rate`
       )
 
 gt(services_held)
@@ -258,7 +246,6 @@ v_services_not_in_s_services <- v_services |>
     bk.v = bk,
     at.v = at,
     lc.v = lc,
-    total.v = total,
     hourly_pay_rate.v = hourly_pay_rate,
     wl_calc_pay.v = wl_calc_pay,
     short_service.v = short_service
