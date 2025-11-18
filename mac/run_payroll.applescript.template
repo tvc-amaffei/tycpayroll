@@ -1,0 +1,10 @@
+-- Template AppleScript to open Terminal and run the `run_payroll.command` in the repo
+-- The build script will replace __PROJECT_DIR__ with the repository path.
+on run
+    set projectPath to "__PROJECT_DIR__"
+    set cmd to "cd " & quoted form of projectPath & " ; open ./run_payroll.command"
+    tell application "Terminal"
+        activate
+        do script cmd
+    end tell
+end run
