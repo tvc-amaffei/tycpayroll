@@ -1,8 +1,8 @@
 ---
-title: "October 2025 Monthly Payroll"
+title: "November 2025 Monthly Payroll"
 format: 
    pdf:
-    output-file: "october-2025-payroll-log"
+    output-file: "november-2025-payroll-log"
     output-ext: "pdf"
     geometry:
       - top=30mm
@@ -11,7 +11,7 @@ format:
     fontsize: 8pt
 params:
   google_user_email: "andymaffei@gmail.com"
-  month: "10"
+  month: "11"
   year: "2025"
   payroll_folder_url: "https://drive.google.com/drive/folders/1si6xal0w6JPyy-m7RVm3zJ9q7n0tf2tm"
   payrate_file_name: "tyc-payrates"
