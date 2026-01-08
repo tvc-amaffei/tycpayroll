@@ -1,8 +1,8 @@
 ---
-title: "November 2025 Monthly Payroll"
+title: "December 2025 Monthly Payroll"
 format: 
    pdf:
-    output-file: "november-2025-payroll-log"
+    output-file: "december-2025-payroll-log"
     output-ext: "pdf"
     geometry:
       - top=30mm
@@ -11,7 +11,7 @@ format:
     fontsize: 8pt
 params:
   google_user_email: "andymaffei@gmail.com"
-  month: "11"
+  month: "12"
   year: "2025"
   payroll_folder_url: "https://drive.google.com/drive/folders/1si6xal0w6JPyy-m7RVm3zJ9q7n0tf2tm"
   payrate_file_name: "tyc-payrates"
@@ -171,7 +171,7 @@ services_held <- read_csv(
     Pay = col_character(),
     Booked = col_integer(),
     Attended = col_integer(),
-    `No Shows` = col_skip(),
+    `No Shows` = col_integer(),
     `Late Cancels` = col_integer(),
     `Pay Rate` = col_character(),
   )
@@ -201,6 +201,7 @@ services_held <- services_held |>
       bk  = Booked,
       at = Attended,
       lc = `Late Cancels`,
+      ns = `No Shows`,
       hourly_pay_rate = `Pay Rate`
       )
 
@@ -246,6 +247,7 @@ v_services_not_in_s_services <- v_services |>
     bk.v = bk,
     at.v = at,
     lc.v = lc,
+    ns.v = ns,
     hourly_pay_rate.v = hourly_pay_rate,
     wl_calc_pay.v = wl_calc_pay,
     short_service.v = short_service
@@ -259,12 +261,14 @@ combined_sv <- combined_sv |>
   mutate(bk.s = ifelse(is.na(bk.s), 0, bk.s)) |>
   mutate(at.s = ifelse(is.na(at.s), 0, at.s)) |>
   mutate(lc.s = ifelse(is.na(lc.s), 0, lc.s)) |>
+  mutate(ns.s = ifelse(is.na(ns.s), 0, ns.s)) |>
   mutate(bk.v = ifelse(is.na(bk.v), 0, bk.v)) |>
   mutate(at.v = ifelse(is.na(at.v), 0, at.v)) |>
   mutate(lc.v = ifelse(is.na(lc.v), 0, lc.v)) |>
+  mutate(ns.v = ifelse(is.na(ns.v), 0, ns.v)) |>
   mutate(wl_calc_pay.s = ifelse(is.na(wl_calc_pay.s), 0, wl_calc_pay.s)) |>
   mutate(wl_calc_pay.v = ifelse(is.na(wl_calc_pay.v), 0, wl_calc_pay.v)) |>
-  mutate(total_attendees = at.s + lc.s + at.v)
+  mutate(total_attendees = at.s + lc.s + ns.s + at.v)
 ```
 
 ##### Add base, pp7, and cap based on hourly payrate WL attaches to service offered
@@ -335,12 +339,15 @@ combined_sv_w_pay <- combined_sv_w_pay |>
 
 services_data_all <- combined_sv_w_pay |>
   select(instructor, date, time, short_service.s, service_type, 
-         at.s, lc.s, at.v, total_attendees, hourly_pay_rate.s, final_pay) |>
+         at.s, lc.s, ns.s, at.v, total_attendees, hourly_pay_rate.s, final_pay) |>
   rename(
     short_service = short_service.s,
     hourly_pay_rate = hourly_pay_rate.s,
     total = total_attendees,
-    stype = service_type)
+    stype = service_type) |>
+  mutate (
+    short_service = str_trunc(short_service, width = 11, side = "right", ellipsis = "") 
+  )
 
 # Print out table
 gt(services_data_all)
@@ -409,7 +416,7 @@ for (i in 1:NROW(unique_instructors)) {
     
   # Move the pdf to the instructor_pdfs folder
     file.rename(paste0("payroll-", instructor_name, ".pdf"),
-                paste0("instructor_pdfs/payroll-", instructor_name, ".pdf"))
+                paste0("../instructor_pdfs/payroll-", instructor_name, ".pdf"))
     
 }
 ```
