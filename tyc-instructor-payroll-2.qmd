@@ -347,6 +347,10 @@ services_data_all <- combined_sv_w_pay |>
     stype = service_type) |>
   mutate (
     short_service = str_trunc(short_service, width = 11, side = "right", ellipsis = "") 
+  ) |>
+  # Arrange by date and time, taking into account that date and time are character strings
+  arrange( lubridate::mdy(date), 
+            lubridate::parse_date_time(time, orders = "I:M p")
   )
 
 # Print out table
@@ -419,6 +423,52 @@ for (i in 1:NROW(unique_instructors)) {
                 paste0("../instructor_pdfs/payroll-", instructor_name, ".pdf"))
     
 }
+```
+
+## Move all PDFs
+
+```{r move-instructor-pdfs}
+#| echo: false
+#| include: false
+
+# Coerce params (YAML params often arrive as character)
+yr <- as.integer(params$year)
+mo <- as.integer(params$month)
+ym_dirname <- sprintf("%04d-%02d", yr, mo)
+
+# Base directories (relative to Quarto working directory)
+source_dir <- file.path("quarto")
+target_dir <- file.path("instructor_pdfs", ym_dirname)
+
+# Create target directory if needed
+dir.create(target_dir, showWarnings = FALSE, recursive = TRUE)
+
+# Delete any existing PDFs in target directory
+existing_pdfs <- list.files(
+  path = target_dir,
+  pattern = "^.*payroll-.*.pdf",
+  full.names = TRUE
+)
+if (length(existing_pdfs) > 0) {
+  file.remove(existing_pdfs)
+}
+
+# Find PDFs to move
+pdf_files <- list.files(
+path = source_dir,
+pattern = "^.*payroll-.*.pdf",
+full.names = TRUE
+)
+
+# Move instructor files
+if (length(pdf_files) > 0) {
+file.rename(
+from = pdf_files,
+to = file.path(target_dir, basename(pdf_files))
+)
+}
+
+
 ```
 
 ## All Done!!!!
