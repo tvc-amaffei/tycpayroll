@@ -1,8 +1,8 @@
 ---
-title: "December 2025 Monthly Payroll"
+title: "March 2026 Monthly Payroll"
 format: 
    pdf:
-    output-file: "december-2025-payroll-log"
+    output-file: "march-2026-payroll-log"
     output-ext: "pdf"
     geometry:
       - top=30mm
@@ -11,8 +11,8 @@ format:
     fontsize: 8pt
 params:
   google_user_email: "andymaffei@gmail.com"
-  month: "12"
-  year: "2025"
+  month: "03"
+  year: "2026"
   payroll_folder_url: "https://drive.google.com/drive/folders/1si6xal0w6JPyy-m7RVm3zJ9q7n0tf2tm"
   payrate_file_name: "tyc-payrates"
   payroll_csv_prefix: "tyc_wlpayroll"
@@ -164,7 +164,7 @@ services_held <- read_csv(
   col_types = cols(
   #  s_staff.text_fullname = col_character(),
     Staff = col_character(),
-    Date = col_character(),
+    `Activation Date` = col_character(),
     Time = col_character(),
     Details = col_character(),
     `Service Type` = col_character(),
@@ -194,7 +194,7 @@ services_held <- services_held |>
       gsub("^ *Virtual via Zoom *", "", `Details`))) |>
     rename(
       instructor = Staff,
-      date = Date,
+      date = `Activation Date`,
       time = Time,
       service_name = `Details`,
       service_type = `Service Type`,
