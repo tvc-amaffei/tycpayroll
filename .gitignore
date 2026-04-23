@@ -16,3 +16,4 @@ logs/
 
 ## ignore melissas files
 melissa_files/*
+.positai
