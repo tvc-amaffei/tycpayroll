@@ -1,8 +1,8 @@
 ---
-title: "March 2026 Monthly Payroll"
+title: "April 2026 Monthly Payroll"
 format: 
    pdf:
-    output-file: "march-2026-payroll-log"
+    output-file: "april-2026-payroll-log"
     output-ext: "pdf"
     geometry:
       - top=30mm
@@ -11,7 +11,7 @@ format:
     fontsize: 8pt
 params:
   google_user_email: "andymaffei@gmail.com"
-  month: "03"
+  month: "04"
   year: "2026"
   payroll_folder_url: "https://drive.google.com/drive/folders/1si6xal0w6JPyy-m7RVm3zJ9q7n0tf2tm"
   payrate_file_name: "tyc-payrates"
@@ -164,11 +164,11 @@ services_held <- read_csv(
   col_types = cols(
   #  s_staff.text_fullname = col_character(),
     Staff = col_character(),
-    `Activation Date` = col_character(),
+    `Date` = col_character(),
     Time = col_character(),
     Details = col_character(),
     `Service Type` = col_character(),
-    Pay = col_character(),
+    `Total Pay` = col_character(),
     Booked = col_integer(),
     Attended = col_integer(),
     `No Shows` = col_integer(),
@@ -187,14 +187,14 @@ file.rename(payroll_file_name,
 # grep string below
 
 services_held <- services_held |>
-    mutate(wl_calc_pay = parse_number(Pay)) |>
+    mutate(wl_calc_pay = parse_number(`Total Pay`)) |>
     mutate(short_service = ifelse(
       grepl("^ *[IiEe][NnXx][ Tt][SsEe][TtRr][UuNn][DdAa][IiLl]", `Details`),
       gsub("^ *[IiEe][NnXx][ Tt][SsEe][TtRr][UuNn][DdAa][IiLl]O* *", "",`Details`),
       gsub("^ *Virtual via Zoom *", "", `Details`))) |>
     rename(
       instructor = Staff,
-      date = `Activation Date`,
+      date = `Date`,
       time = Time,
       service_name = `Details`,
       service_type = `Service Type`,
